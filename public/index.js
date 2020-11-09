@@ -69,15 +69,6 @@ document.addEventListener("DOMContentLoaded", function(){
     //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
     //I am working on fixing overlapping sound issues.
     //giving the sounds names. Will be outmoded when the backend is done
-    sound1 = document.getElementById("sound-1")
-    sound2 = document.getElementById("sound-2")
-    sound3 = document.getElementById("sound-3")
-    sound4 = document.getElementById("sound-4")
-    sound5 = document.getElementById("sound-5")
-    sound6 = document.getElementById("sound-6")
-    sound7 = document.getElementById("sound-7")
-    sound8 = document.getElementById("sound-8")
-    sound9 = document.getElementById("sound-9")
     //loading the sounds. This will be outmoded eventually. 
     let kick = {
         name: "kick",
