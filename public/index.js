@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
     }
-      
-    bpmInput.addEventListener("change", function(e){
+
+    bpmInput.addEventListener("input", function(e){
         console.log(e.target.value)
         BPM = e.target.value
         if (play === true){
             clearInterval(beat)
-            beat = setInterval(function(){document.dispatchEvent(oneBeat)},60000/BPM)
+            beat = setInterval(function(){document.dispatchEvent(oneBeat)},15000/BPM)
         }
     })
     //begin large comment
@@ -59,15 +59,15 @@ document.addEventListener("DOMContentLoaded", function(){
     //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
     //I am working on fixing overlapping sound issues.
     //giving the sounds names. Will be outmoded when the backend is done
-    sound1 = document.getElementById("kick")
-    sound2 = document.getElementById("snare")
-    sound3 = document.getElementById("hat")
-    sound4 = document.getElementById("open-hat")
-    sound5 = document.getElementById("ride")
-    sound6 = document.getElementById("crash")
-    sound7 = document.getElementById("tom-1")
-    sound8 = document.getElementById("tom-2")
-    sound9 = document.getElementById("tom-3")
+    sound1 = document.getElementById("sound-1")
+    sound2 = document.getElementById("sound-2")
+    sound3 = document.getElementById("sound-3")
+    sound4 = document.getElementById("sound-4")
+    sound5 = document.getElementById("sound-5")
+    sound6 = document.getElementById("sound-6")
+    sound7 = document.getElementById("sound-7")
+    sound8 = document.getElementById("sound-8")
+    sound9 = document.getElementById("sound-9")
     //loading the sounds. This will be outmoded eventually. 
     let kick = {
         name: "kick",
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function(){
         {
             play = true
             console.log("working")
-            beat = setInterval(function(){document.dispatchEvent(oneBeat)},60000/BPM)
+            beat = setInterval(function(){document.dispatchEvent(oneBeat)},15000/BPM)
         }
 
     })
