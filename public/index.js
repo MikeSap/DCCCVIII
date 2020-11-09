@@ -36,10 +36,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
     document.onkeyup = (e) => {
         let pad = document.querySelector(`#pad-${e.key}`)
-        if (pad.className == "key-pressed"){
-                pad.className = "key-not-pressed"  
+        if (e.code.includes("Numpad")){
+            if (pad.className == "key-pressed"){
+                    pad.className = "key-not-pressed"  
+            }
         }
-    }  
+    }
+      
     bpmInput.addEventListener("change", function(e){
         console.log(e.target.value)
         BPM = e.target.value
