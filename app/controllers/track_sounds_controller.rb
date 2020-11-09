@@ -1,0 +1,2 @@
+class TrackSoundsController < ApplicationController
+end
