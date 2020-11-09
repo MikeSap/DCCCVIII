@@ -3,18 +3,22 @@
   grid-template-rows: repeat(4, 1fr) ;
   background-color: black;
   padding: 20px;
-  width: 500px;
+  width: 375px;
   border-radius: 20px;
 }
 .instrument-container{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 2fr 3fr;
     background-color: black;
     padding: 0px;
 }
-.second-div{
+.sequencer-div{
     width: 1000px;
 }
+.information-div {
+    color: white;
+}
+
 
 .row {
     margin: 5.5px;

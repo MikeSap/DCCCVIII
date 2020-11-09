@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     beatPad.addEventListener('mousedown', (e) => {
     if (e.target.className == "key-not-pressed"){
         let button = e.target       
+        console.log(e.target.dataset.id)
         button.className = "key-pressed"
         setTimeout(function(){
             button.className = "key-not-pressed"}, 1000)
@@ -44,13 +45,24 @@ document.addEventListener("DOMContentLoaded", function(){
             beat = setInterval(function(){document.dispatchEvent(oneBeat)},60000/BPM)
         }
     })
+    //begin large comment
+
+    //everything within this comment block needs to be removed before the backend can be fully implemented.
+    //To implement it the backend must feed the frontend an array with each sound in it, those sounds must be turned into objects
+    //each with a name and sound.
+    //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
+    //I am working on fixing overlapping sound issues.
+    //giving the sounds names. Will be outmoded when the backend is done
     sound1 = document.getElementById("kick")
     sound2 = document.getElementById("snare")
     sound3 = document.getElementById("hat")
-
-
-
-
+    sound4 = document.getElementById("open-hat")
+    sound5 = document.getElementById("ride")
+    sound6 = document.getElementById("crash")
+    sound7 = document.getElementById("tom-1")
+    sound8 = document.getElementById("tom-2")
+    sound9 = document.getElementById("tom-3")
+    //loading the sounds. This will be outmoded eventually. 
     let kick = {
         name: "kick",
         sound: sound1
@@ -63,15 +75,44 @@ document.addEventListener("DOMContentLoaded", function(){
         name: "hat",
         sound: sound3
     }
+    let openHat = {
+        name: "open hat",
+        sound: sound4
+    }
+    let ride = {
+        name: "ride",
+        sound: sound5
+    }
+    let crash = {
+        name: "crash",
+        sound: sound6
+    }
+    let tom1 = {
+        name: "tom 1",
+        sound: sound7
+    }
+    let tom2 = {
+        name: "tom 2",
+        sound: sound8
+    }
+    let tom3 = {
+        name: "tom 3",
+        sound: sound9
+    }
+    
+
     let empty = {
         name: "empty",
         sound: undefined
     }
-    sampleArray = [ , sound1,sound2,sound3]
+    sampleArray = [ , sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,sound9]
+    let soundArray = [empty, kick,snare,hat,openHat,crash,ride,tom1,tom2,tom3]
+
+    //end large comment
     let playbtn = document.getElementById("play")
     let stopbtn = document.getElementById("stop")
     let play = false
-    let soundArray = [empty, kick,snare,hat]
+    
     let oneBeat = new CustomEvent('oneBeat')
 
     function setUpSequencer(){
