@@ -42,3 +42,9 @@
     background: orange;
 }
 
+
+
+.sequence-input.active{
+    color: blue;
+    background-color: orange;
+}

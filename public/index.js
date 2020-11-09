@@ -138,7 +138,8 @@ document.addEventListener("DOMContentLoaded", function(){
             contain.append(p)
             for (let x = 0; x < 16; x += 1){
                 let select = document.createElement("select")
-                select.setAttribute("class","sequence-input")
+                select.setAttribute("class","sequence-input unhighlighted")
+                
                 select.dataset.id = x
                 for (let i = 0; i < soundArray.length; i += 1){
                     let option = document.createElement("option")
@@ -174,12 +175,15 @@ document.addEventListener("DOMContentLoaded", function(){
         let sounds = document.getElementsByClassName("sequence-input")
         for (let i = 0; i < sounds.length; i += 1)
         {
+            sounds[i].setAttribute('class','sequence-input active')
             if (parseInt(sounds[i].dataset.id) === position){
                 pos = sounds[i].options["selectedIndex"]
                 if (pos != 0){
                     playSound(sampleArray[pos])
                     //sampleArray[pos].play()
                 }
+            } else {
+                sounds[i].setAttribute('class','sequence-input inert')
             }
         }
         position += 1
