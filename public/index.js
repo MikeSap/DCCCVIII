@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     document.onkeydown = (e) => {
         let pad = document.querySelector(`#pad-${e.key}`)
+        sampleArray[parseInt(pad.dataset.id)].play()
         if (pad.className == "key-not-pressed"){
                 pad.className = "key-pressed"  
         }
