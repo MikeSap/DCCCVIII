@@ -1,0 +1,10 @@
+sound1 = document.getElementById("sound-1")
+sound2 = document.getElementById("sound-2")
+sound3 = document.getElementById("sound-3")
+sound4 = document.getElementById("sound-4")
+sound5 = document.getElementById("sound-5")
+sound6 = document.getElementById("sound-6")
+sound7 = document.getElementById("sound-7")
+sound8 = document.getElementById("sound-8")
+sound9 = document.getElementById("sound-9")
+let sampleArray = [ , sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,sound9]
