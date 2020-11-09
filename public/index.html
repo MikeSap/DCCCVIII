@@ -1,6 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <script src="index.js" defer></script>
     <audio id="kick">
         <source src="./assets/sounds/TR-707Kick01.wav" type="audio/wav">
     </audio>
@@ -10,13 +10,49 @@
     <audio id="hat">
         <source src="./assets/sounds/Hat 2.wav" type="audio/wav">
     </audio>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src='./index.js'defer></script>
+    <title>DCCCVIII</title>
 </head>
-
 <body>
-    <h1>Basic Sequencer</h1>
-    <p>BPM: <input type="number" placeholder="120" id="BPM-input"></p>
-    <button id="play">Play</button>
-    <button id="stop">Stop</button>
-    <div id="sequencer-container">
+    <div class="instrument-container">
+        <div class="beat-pad-container">
+            <div class="row" data-row="1">
+                <div data-key="pad-13" id="pad-13" class="key-not-pressed"></div>
+                <div data-key="pad-14" id="pad-14"class="key-not-pressed"></div>
+                <div data-key="pad-15" id="pad-15" class="key-not-pressed"></div>
+                <div data-key="pad-16" id="pad-16" class="key-not-pressed"></div>
+            </div>
+            <div class="row" data-row="2">
+                <div data-key="pad-9" id="pad-9" class="key-not-pressed"></div>
+                <div data-key="pad-10" id="pad-10"class="key-not-pressed"></div>
+                <div data-key="pad-11" id="pad-11" class="key-not-pressed"></div>
+                <div data-key="pad-12" id="pad-12" class="key-not-pressed"></div>
+            </div>        
+            <div class="row" data-row="3">
+                <div data-key="pad-5" id="pad-5" class="key-not-pressed"></div>
+                <div data-key="pad-6" id="pad-6"class="key-not-pressed"></div>
+                <div data-key="pad-7" id="pad-7" class="key-not-pressed"></div>
+                <div data-key="pad-8" id="pad-8" class="key-not-pressed"></div>
+            </div>       
+            <div class="row" data-row="4">
+                <div data-key="pad-1" id="pad-1" class="key-not-pressed"></div>
+                <div data-key="pad-2" id="pad-2"class="key-not-pressed"></div>
+                <div data-key="pad-3" id="pad-3"class="key-not-pressed"></div>
+                <div data-key="pad-4" id="pad-4"class="key-not-pressed"></div>
+            </div>
+            
+        </div>
+        <div class="second-div">
+            <h1>Basic Sequencer</h1>
+            <p>BPM: <input type="number" placeholder="120" id="BPM-input"></p>
+            <button id="play">Play</button>
+            <button id="stop">Stop</button>
+            <div id="sequencer-container">
+        </div>
     </div>
+
 </body>
+</html>

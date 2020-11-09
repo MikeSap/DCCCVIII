@@ -1,0 +1,40 @@
+.beat-pad-container{
+  display: grid;
+  grid-template-rows: repeat(4, 1fr) ;
+  background-color: black;
+  padding: 20px;
+  width: 500px;
+  border-radius: 20px;
+}
+.instrument-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: black;
+    padding: 0px;
+}
+.second-div{
+    width: 1000px;
+}
+
+.row {
+    margin: 5.5px;
+}
+
+.key-not-pressed{
+    float: left;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background: gray;
+}
+
+.key-pressed{
+    float: left;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background: orange;
+}
+
