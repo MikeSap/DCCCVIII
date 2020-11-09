@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", function(){
     let BPM = 120
     let position = 0
     let bpmInput = document.getElementById("BPM-input")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1fb1a17a0f587bfc3c5b0da43284e591059b104c
     const beatPad = document.querySelector('.beat-pad-container')
     beatPad.addEventListener('mousedown', (e) => {
     if (e.target.className == "key-not-pressed"){
@@ -21,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function(){
         }    
     })
 
-
     document.onkeydown = (e) => {
         if (e.code.includes("Numpad")){
             let pad = document.querySelector(`#pad-${e.key}`)
@@ -35,16 +38,23 @@ document.addEventListener("DOMContentLoaded", function(){
 
     document.onkeyup = (e) => {
         let pad = document.querySelector(`#pad-${e.key}`)
-        if (pad.className == "key-pressed"){
-                pad.className = "key-not-pressed"  
+        if (e.code.includes("Numpad")){
+            if (pad.className == "key-pressed"){
+                    pad.className = "key-not-pressed"  
+            }
         }
-    }  
-    bpmInput.addEventListener("change", function(e){
+    }
+
+    bpmInput.addEventListener("input", function(e){
         console.log(e.target.value)
         BPM = e.target.value
         if (play === true){
             clearInterval(beat)
+<<<<<<< HEAD
             beat = setInterval(function(){document.dispatchEvent(oneBeat)},30000/BPM)
+=======
+            beat = setInterval(function(){document.dispatchEvent(oneBeat)},15000/BPM)
+>>>>>>> 1fb1a17a0f587bfc3c5b0da43284e591059b104c
         }
     })
     //implement the switcher
@@ -58,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function(){
     //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
     //I am working on fixing overlapping sound issues.
     //giving the sounds names. Will be outmoded when the backend is done
+<<<<<<< HEAD
     
     
 
@@ -73,6 +84,17 @@ document.addEventListener("DOMContentLoaded", function(){
     sound7 = document.getElementById("tom-1")
     sound8 = document.getElementById("tom-2")
     sound9 = document.getElementById("tom-3")
+=======
+    sound1 = document.getElementById("sound-1")
+    sound2 = document.getElementById("sound-2")
+    sound3 = document.getElementById("sound-3")
+    sound4 = document.getElementById("sound-4")
+    sound5 = document.getElementById("sound-5")
+    sound6 = document.getElementById("sound-6")
+    sound7 = document.getElementById("sound-7")
+    sound8 = document.getElementById("sound-8")
+    sound9 = document.getElementById("sound-9")
+>>>>>>> 1fb1a17a0f587bfc3c5b0da43284e591059b104c
     //loading the sounds. This will be outmoded eventually. 
     let kick = {
         name: "kick",
@@ -110,12 +132,11 @@ document.addEventListener("DOMContentLoaded", function(){
         name: "tom 3",
         sound: sound9
     }
-    
-
     let empty = {
         name: "empty",
         sound: undefined
     }
+
     let sampleArray = [ , sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,sound9]
     let soundArray = [empty, kick,snare,hat,openHat,crash,ride,tom1,tom2,tom3]
 
@@ -147,19 +168,19 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-
-
-
-
     playbtn.addEventListener("click",function(){
         if (play === false)
         {
             play = true
             console.log("working")
+<<<<<<< HEAD
             beat = setInterval(function(){document.dispatchEvent(oneBeat)},30000/BPM)
+=======
+            beat = setInterval(function(){document.dispatchEvent(oneBeat)},15000/BPM)
+>>>>>>> 1fb1a17a0f587bfc3c5b0da43284e591059b104c
         }
-
     })
+
     stopbtn.addEventListener("click",function(){
         if (play === true)
         {
@@ -168,8 +189,8 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log("Stopped")
             clearInterval(beat)
         }
-
     })
+
     document.addEventListener("oneBeat", function(){
         let sounds = document.getElementsByClassName("sequence-input")
         for (let i = 0; i < sounds.length; i += 1)
@@ -191,5 +212,3 @@ document.addEventListener("DOMContentLoaded", function(){
     })
     setUpSequencer()
 })
-
-
