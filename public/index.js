@@ -2,10 +2,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let BPM = 120
     let position = 0
     let bpmInput = document.getElementById("BPM-input")
-
-
     const beatPad = document.querySelector('.beat-pad-container')
-
     beatPad.addEventListener('mousedown', (e) => {
     if (e.target.className == "key-not-pressed"){
         let button = e.target       
@@ -47,9 +44,12 @@ document.addEventListener("DOMContentLoaded", function(){
         BPM = e.target.value
         if (play === true){
             clearInterval(beat)
-            beat = setInterval(function(){document.dispatchEvent(oneBeat)},60000/BPM)
+            beat = setInterval(function(){document.dispatchEvent(oneBeat)},30000/BPM)
         }
     })
+    //implement the switcher
+    
+    
     //begin large comment
 
     //everything within this comment block needs to be removed before the backend can be fully implemented.
@@ -58,12 +58,18 @@ document.addEventListener("DOMContentLoaded", function(){
     //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
     //I am working on fixing overlapping sound issues.
     //giving the sounds names. Will be outmoded when the backend is done
+    
+    
+
+
+
+
     sound1 = document.getElementById("kick")
     sound2 = document.getElementById("snare")
     sound3 = document.getElementById("hat")
     sound4 = document.getElementById("open-hat")
-    sound5 = document.getElementById("ride")
-    sound6 = document.getElementById("crash")
+    sound5 = document.getElementById("crash")
+    sound6 = document.getElementById("ride")
     sound7 = document.getElementById("tom-1")
     sound8 = document.getElementById("tom-2")
     sound9 = document.getElementById("tom-3")
@@ -150,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function(){
         {
             play = true
             console.log("working")
-            beat = setInterval(function(){document.dispatchEvent(oneBeat)},60000/BPM)
+            beat = setInterval(function(){document.dispatchEvent(oneBeat)},30000/BPM)
         }
 
     })
@@ -171,7 +177,8 @@ document.addEventListener("DOMContentLoaded", function(){
             if (parseInt(sounds[i].dataset.id) === position){
                 pos = sounds[i].options["selectedIndex"]
                 if (pos != 0){
-                    sampleArray[pos].play()
+                   //debugger
+                   sampleArray[pos].play()
                 }
             }
             //debugger
