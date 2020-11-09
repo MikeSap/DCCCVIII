@@ -12,6 +12,7 @@ function fetchSounds(bankId){
 
 function initializeBank(bank){
     bank.sounds.forEach((sound, index) => {
-        sampleArray[index + 1].innerHTML = `<source src="${sound.location}" type="audio/wav">`
+        sampleArray[index + 1].setAttribute("src", `${sound.location}`)
+        sampleArray[index + 1].setAttribute("preload", "auto")
     })
 }

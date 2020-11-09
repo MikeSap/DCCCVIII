@@ -1,17 +1,22 @@
 document.addEventListener("DOMContentLoaded", function(){
     let BPM = 120
+    let currentSoundId = 1
     let position = 0
     let bpmInput = document.getElementById("BPM-input")
-<<<<<<< HEAD
-=======
-
->>>>>>> 1fb1a17a0f587bfc3c5b0da43284e591059b104c
     const beatPad = document.querySelector('.beat-pad-container')
+    function playSound(node){
+        //debugger
+        let new_audio = node.cloneNode()
+        new_audio.play()
+    }
     beatPad.addEventListener('mousedown', (e) => {
+    
+
     if (e.target.className == "key-not-pressed"){
-        let button = e.target       
-        console.log(e.target.dataset.id)
-        sampleArray[parseInt(e.target.dataset.id)].play()
+        let button = e.target
+        //debugger
+        playSound(sampleArray[parseInt(e.target.dataset.id)])
+        currentSoundId = parseInt(e.target.dataset.id)
         button.className = "key-pressed"
         setTimeout(function(){
             button.className = "key-not-pressed"}, 1000)
@@ -29,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (e.code.includes("Numpad")){
             let pad = document.querySelector(`#pad-${e.key}`)
 
-            sampleArray[parseInt(pad.dataset.id)].play()
+            playSound(sampleArray[parseInt(pad.dataset.id)])
             if (pad.className == "key-not-pressed"){
                     pad.className = "key-pressed"  
             }
@@ -50,11 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
         BPM = e.target.value
         if (play === true){
             clearInterval(beat)
-<<<<<<< HEAD
             beat = setInterval(function(){document.dispatchEvent(oneBeat)},30000/BPM)
-=======
-            beat = setInterval(function(){document.dispatchEvent(oneBeat)},15000/BPM)
->>>>>>> 1fb1a17a0f587bfc3c5b0da43284e591059b104c
         }
     })
     //implement the switcher
@@ -68,23 +69,6 @@ document.addEventListener("DOMContentLoaded", function(){
     //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
     //I am working on fixing overlapping sound issues.
     //giving the sounds names. Will be outmoded when the backend is done
-<<<<<<< HEAD
-    
-    
-
-
-
-
-    sound1 = document.getElementById("kick")
-    sound2 = document.getElementById("snare")
-    sound3 = document.getElementById("hat")
-    sound4 = document.getElementById("open-hat")
-    sound5 = document.getElementById("crash")
-    sound6 = document.getElementById("ride")
-    sound7 = document.getElementById("tom-1")
-    sound8 = document.getElementById("tom-2")
-    sound9 = document.getElementById("tom-3")
-=======
     sound1 = document.getElementById("sound-1")
     sound2 = document.getElementById("sound-2")
     sound3 = document.getElementById("sound-3")
@@ -94,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function(){
     sound7 = document.getElementById("sound-7")
     sound8 = document.getElementById("sound-8")
     sound9 = document.getElementById("sound-9")
->>>>>>> 1fb1a17a0f587bfc3c5b0da43284e591059b104c
     //loading the sounds. This will be outmoded eventually. 
     let kick = {
         name: "kick",
@@ -173,11 +156,7 @@ document.addEventListener("DOMContentLoaded", function(){
         {
             play = true
             console.log("working")
-<<<<<<< HEAD
             beat = setInterval(function(){document.dispatchEvent(oneBeat)},30000/BPM)
-=======
-            beat = setInterval(function(){document.dispatchEvent(oneBeat)},15000/BPM)
->>>>>>> 1fb1a17a0f587bfc3c5b0da43284e591059b104c
         }
     })
 
@@ -198,11 +177,10 @@ document.addEventListener("DOMContentLoaded", function(){
             if (parseInt(sounds[i].dataset.id) === position){
                 pos = sounds[i].options["selectedIndex"]
                 if (pos != 0){
-                   //debugger
-                   sampleArray[pos].play()
+                    playSound(sampleArray[pos])
+                    //sampleArray[pos].play()
                 }
             }
-            //debugger
         }
         position += 1
         if (position === 16)
