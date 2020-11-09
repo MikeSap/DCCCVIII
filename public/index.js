@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function(){
     let position = 0
     let bpmInput = document.getElementById("BPM-input")
 
-
     const beatPad = document.querySelector('.beat-pad-container')
 
     beatPad.addEventListener('mousedown', (e) => {
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function(){
         button.className = "key-not-pressed"
         }    
     })
-
 
     document.onkeydown = (e) => {
         if (e.code.includes("Numpad")){
@@ -105,7 +103,6 @@ document.addEventListener("DOMContentLoaded", function(){
         sound: sound9
     }
     
-
     let empty = {
         name: "empty",
         sound: undefined
@@ -140,10 +137,6 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
     }
-
-
-
-
 
     playbtn.addEventListener("click",function(){
         if (play === false)
@@ -184,5 +177,3 @@ document.addEventListener("DOMContentLoaded", function(){
     })
     setUpSequencer()
 })
-
-
