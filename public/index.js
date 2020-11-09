@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if (e.target.className == "key-not-pressed"){
         let button = e.target       
         console.log(e.target.dataset.id)
+        sampleArray[parseInt(e.target.dataset.id)].play()
         button.className = "key-pressed"
         setTimeout(function(){
             button.className = "key-not-pressed"}, 1000)
