@@ -105,11 +105,11 @@ document.addEventListener("DOMContentLoaded", function(){
         name: "tom 3",
         sound: sound9
     }
-    
     let empty = {
         name: "empty",
         sound: undefined
     }
+
     let sampleArray = [ , sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,sound9]
     let soundArray = [empty, kick,snare,hat,openHat,crash,ride,tom1,tom2,tom3]
 
@@ -148,8 +148,8 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log("working")
             beat = setInterval(function(){document.dispatchEvent(oneBeat)},15000/BPM)
         }
-
     })
+
     stopbtn.addEventListener("click",function(){
         if (play === true)
         {
@@ -158,8 +158,8 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log("Stopped")
             clearInterval(beat)
         }
-
     })
+
     document.addEventListener("oneBeat", function(){
         let sounds = document.getElementsByClassName("sequence-input")
         for (let i = 0; i < sounds.length; i += 1)
