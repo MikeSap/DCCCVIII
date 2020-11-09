@@ -26,10 +26,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     document.onkeydown = (e) => {
-        let pad = document.querySelector(`#pad-${e.key}`)
-        sampleArray[parseInt(pad.dataset.id)].play()
-        if (pad.className == "key-not-pressed"){
-                pad.className = "key-pressed"  
+        if (e.code.includes("Numpad")){
+            let pad = document.querySelector(`#pad-${e.key}`)
+
+            sampleArray[parseInt(pad.dataset.id)].play()
+            if (pad.className == "key-not-pressed"){
+                    pad.className = "key-pressed"  
+            }
         }
     }  
 
@@ -107,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function(){
         name: "empty",
         sound: undefined
     }
-    sampleArray = [ , sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,sound9]
+    let sampleArray = [ , sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,sound9]
     let soundArray = [empty, kick,snare,hat,openHat,crash,ride,tom1,tom2,tom3]
 
     //end large comment
