@@ -15,7 +15,11 @@ document.addEventListener("DOMContentLoaded", function(){
     if (e.target.className == "key-not-pressed"){
         let button = e.target
         //debugger
-        playSound(sampleArray[parseInt(e.target.dataset.position)])
+
+        let node = document.createElement('audio') 
+        node.setAttribute(`src`,`${sampleArray[parseInt(e.target.dataset.position)].src}`)
+        node.setAttribute('preload','auto')
+        playSound(node)
         currentSoundId = parseInt(e.target.dataset.position)
         button.className = "key-pressed"
         setTimeout(function(){
@@ -34,7 +38,11 @@ document.addEventListener("DOMContentLoaded", function(){
         if (e.code.includes("Numpad")){
             let pad = document.querySelector(`#pad-${e.key}`)
 
-            playSound(sampleArray[parseInt(pad.dataset.position)])
+            let node = document.createElement('audio') 
+            node.setAttribute(`src`,`${sampleArray[parseInt(pad.dataset.position)].src}`)
+            currentSoundId = parseInt(pad.dataset.position)
+            node.setAttribute('preload','auto')
+            playSound(node)
             if (pad.className == "key-not-pressed"){
                     pad.className = "key-pressed"  
             }
@@ -69,50 +77,8 @@ document.addEventListener("DOMContentLoaded", function(){
     //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
     //I am working on fixing overlapping sound issues.
     //giving the sounds names. Will be outmoded when the backend is done
-    //loading the sounds. This will be outmoded eventually. 
-    let kick = {
-        name: "kick",
-        sound: sound1
-    }
-    let snare = {
-        name: "snare",
-        sound: sound2
-    }
-    let hat = {
-        name: "hat",
-        sound: sound3
-    }
-    let openHat = {
-        name: "open hat",
-        sound: sound4
-    }
-    let ride = {
-        name: "ride",
-        sound: sound5
-    }
-    let crash = {
-        name: "crash",
-        sound: sound6
-    }
-    let tom1 = {
-        name: "tom 1",
-        sound: sound7
-    }
-    let tom2 = {
-        name: "tom 2",
-        sound: sound8
-    }
-    let tom3 = {
-        name: "tom 3",
-        sound: sound9
-    }
-    let empty = {
-        name: "empty",
-        sound: undefined
-    }
+    //loading the sounds. This will be outmoded eventually.
 
-    let sampleArray = [ , sound1,sound2,sound3,sound4,sound5,sound6,sound7,sound8,sound9]
-    let soundArray = [empty, kick,snare,hat,openHat,crash,ride,tom1,tom2,tom3]
 
     //end large comment
     let playbtn = document.getElementById("play")
@@ -123,22 +89,39 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function setUpSequencer(){
         contain = document.getElementById("sequencer-container")
+        contain.innerHTML = ' '
         for (let y = 0; y < 8; y += 1){
             let p = document.createElement("p")
             p.className = 'track'
-            p.innertext = `Sequence ${y+1}`
+            p.innerText = `Sequence ${y+1}`
             contain.append(p)
             p.dataset.trackId = y+1
             for (let x = 0; x < 16; x += 1){
-                let select = document.createElement("select")
-                select.setAttribute("class","sequence-input unhighlighted")
-                
+                let select = document.createElement("button")
+                select.setAttribute("class","sequence-input inert unclicked")
+                select.dataset.soundInfo = ' '
+                select.dataset.soundId = 0
                 select.dataset.position = x
-                for (let i = 0; i < soundArray.length; i += 1){
-                    let option = document.createElement("option")
-                    option.innerText = soundArray[i].name
-                    select.append(option)
-                }
+                select.addEventListener("click",function(e){
+
+                    if (e.target.dataset.soundInfo != sampleArray[currentSoundId].src)
+                    {
+                        console.log(e)
+                        e.target.innerText = sampleArray[currentSoundId].name
+                        e.target.dataset.soundInfo = sampleArray[currentSoundId].src
+                        e.target.dataset.soundId = sampleArray[currentSoundId].id
+                        let status = e.target.getAttribute("class").split(" ")
+                        console.log(status)
+                        e.target.setAttribute("class",`${status[0]} ${status[1]} clicked`)
+                    } else {
+                        e.target.innerText = ' '
+                        e.target.dataset.soundInfo = ' '
+                        e.target.dataset.soundId = 0
+                        let status = e.target.getAttribute("class").split(" ")
+                        e.target.setAttribute("class",`${status[0]} ${status[1]} unclicked`)
+                    }
+
+                })
                 p.append(select)
             }
         }
@@ -167,15 +150,24 @@ document.addEventListener("DOMContentLoaded", function(){
         let sounds = document.getElementsByClassName("sequence-input")
         for (let i = 0; i < sounds.length; i += 1)
         {
-            sounds[i].setAttribute('class','sequence-input active')
+            let status = sounds[i].getAttribute("class").split(" ")
+            console.log(status)
+            sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
             if (parseInt(sounds[i].dataset.position) === position){
-                pos = sounds[i].options["selectedIndex"]
-                if (pos != 0){
-                    playSound(sampleArray[pos])
+                pos = sounds[i].dataset.soundInfo
+                if (pos != " "){
+                    let node = document.createElement('audio') 
+                    node.setAttribute(`src`,`${pos}`)
+                    node.setAttribute('preload','auto')
+                    playSound(node)
+                    console.log(node)
                     //sampleArray[pos].play()
                 }
             } else {
-                sounds[i].setAttribute('class','sequence-input inert')
+
+                let status = sounds[i].getAttribute("class").split(" ")
+                console.log(status)
+                sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
             }
         }
         position += 1
