@@ -1,3 +1,3 @@
 class SoundSerializer < ActiveModel::Serializer
-  attributes :name, :location, :bank
+  attributes :id, :name, :location, :bank
 end
