@@ -13,7 +13,7 @@ function loadTrack(track, index){
     const trackNodes = Array.from(document.querySelectorAll('.track')[index].children)
     track.track_sounds.forEach(ts => {
         const position = trackNodes.find(pos => pos.dataset.position == ts.position)
-        position.options.selectedIndex = ts.sound.sound_id
+        position.dataset.soundId = ts.sound.sound_id
     })
 }
 
