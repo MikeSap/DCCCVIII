@@ -9,8 +9,10 @@
 .instrument-container{
     display: grid;
     grid-template-columns: 1fr 2fr 3fr;
-    background-color: black;
+    background-color: grey;
     padding: 0px;
+    border-radius: 20px;
+
 }
 .sequencer-div{
     width: 1000px;
