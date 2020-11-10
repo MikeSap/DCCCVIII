@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function(){
                         console.log(e)
                         e.target.innerText = sampleArray[currentSoundId].name
                         e.target.dataset.soundInfo = sampleArray[currentSoundId].src
+                        debugger
                         e.target.dataset.soundId = sampleArray[currentSoundId].id
                         let status = e.target.getAttribute("class").split(" ")
                         console.log(status)

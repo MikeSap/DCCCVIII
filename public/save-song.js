@@ -7,7 +7,8 @@ songForm.addEventListener('submit', (e) => {
     tracks["title"] = e.target.songName.value
     tracks["creator"] = e.target.producer.value
     seqInputs.forEach(input => {
-        let soundId = input.selectedIndex
+        debugger
+        let soundId = input.id
         let trackId = input.parentNode.dataset.trackId
         tracks[trackId] ? tracks[trackId] = [...tracks[trackId], soundId]:
         tracks[trackId] = [ soundId ]  

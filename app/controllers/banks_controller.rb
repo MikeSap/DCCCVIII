@@ -1,3 +1,5 @@
+
+
 class BanksController < ApplicationController
     def index
        banks = Bank.all
@@ -5,7 +7,7 @@ class BanksController < ApplicationController
     end
 
     def show
-        bank = Bank.find(params[:id])
+        bank = Bank.find(params[:id])     
         render json: bank
     end
 end
