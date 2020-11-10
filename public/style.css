@@ -7,20 +7,20 @@ body{
   grid-template-rows: repeat(3, 1fr) ;
   background-color: black;
   padding: 20px;
-  width: 375px;
+  width: 95%;
   border-radius: 20px;
 }
 .instrument-container{
     display: grid;
-    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-columns: 32% 15% 50%;
     background-color: grey;
     padding: 0px;
-    border-radius: 20px;
+    border-radius: 0px;
 
 }
 .sequencer-div{
-    width: 1000px;
-    margin: 25px;
+    width: 100%;
+    margin: 0px;
 
 }
 .information-div {
