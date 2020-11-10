@@ -9,12 +9,12 @@ body{
   grid-template-rows: repeat(3, 1fr) ;
   background-color: black;
   padding: 1%;
-  width: 95%;
+  width: 100%;
   border-radius: 20px;
 }
 .instrument-container{
     display: grid;
-    grid-template-columns: 22% 15% 50%;
+    grid-template-columns: 35% 15% 50%;
     background-color: grey;
     padding: 0px;
     border-radius: 0px;
@@ -89,6 +89,17 @@ button{
     background-color: orange;
 }
 
+
+.errors {
+    background: #c51244 !important;
+    padding: 5px;
+    position: relative; 
+    display: inline-block !important;
+  }
+
+.hidden {
+    display: none;
+}
 .sequence-input.active.clicked{
     background-color: orangered;
     box-shadow: -3px -3px black;

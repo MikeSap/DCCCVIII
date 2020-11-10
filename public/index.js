@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+
     let BPM = 120
     let currentSoundId = 1
     let position = 0
@@ -167,4 +167,3 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
     setUpSequencer()
-})

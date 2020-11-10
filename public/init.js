@@ -57,6 +57,8 @@ function songSelector(songs){
         select.append(option)
     })
     select.addEventListener('change', e => {
-        loadSong(e.target.options[e.target.selectedIndex].dataset.id)
+        loadSong(parseInt(e.target.options[e.target.selectedIndex].dataset.id))
     })
+
 }
+

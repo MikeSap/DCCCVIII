@@ -138,7 +138,6 @@ Sound.create(bank: bank, name: 'Xylophone D', location: './assets/sounds/Xylopho
 Sound.create(bank: bank, name: 'Xylophone E2', location: './assets/sounds/Xylophone/08.E2.WAV')
 Sound.create(bank: bank, name: 'Xylophone Fs2', location: './assets/sounds/Xylophone/09.Fs2.WAV')
 
-Sound.create(name: "Empty", location: './assets/sounds/808/10.Stop.WAV')
 song = Song.create(title: 'Flatiron Blues', creator: 'Tom')
 track = Track.create(song: song)
 

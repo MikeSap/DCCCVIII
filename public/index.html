@@ -18,6 +18,7 @@
     <script src='./index.js'defer></script>
     <script src='./save-song.js'defer></script>
     <script src='./load-song.js'defer></script>
+    <script src='./update-delete-song.js'defer></script>
     <title>DCCCVIII</title>
 </head>
 <body>
@@ -42,6 +43,7 @@
         </div>
         <div class="information-div">
             <h1>DCCCVIII</h1>
+            <div id="error-node" class="hidden"></div>
             <p>BPM: <input type="number" placeholder="120" id="BPM-input"></p>
             <button id="play">Play</button>
             <button id="stop">Stop</button>
@@ -50,15 +52,19 @@
             <br>
             <br>
             <br>
-            <br>
             <form class="song-form">
-                <input type="text" id="producer" name="producer" placeholder="Producer Name">
-                <input type="text" id="song-name" name="songName"placeholder="Song Name">
+                <input type="text" id="producer" name="producer" placeholder="Creator">
+                <input type="text" id="song-name" name="songName"placeholder="Title">
                 <input type="submit">
             </form>
             <br>
-            <select id="load-song"></select>
-
+            
+                <select id="load-song"></select>
+                <!-- <button id="load-song">Load Song</button> -->
+            <form class="crud-form">
+                <button id="update-song">Update Current Song</button>
+                <button id="delete-song">Delete Current Song</button>
+            </form>
         </div>
         <div class="sequencer-div">
             

@@ -18,4 +18,10 @@ const pad6 = document.getElementById('pad-6')
 const pad7 = document.getElementById('pad-7')
 const pad8 = document.getElementById('pad-8')
 const pad9 = document.getElementById('pad-9')
+const errorNode = document.getElementById('error-node')
+const crudForm = document.querySelector('.crud-form')
+const songSelect = document.getElementById('load-song')
+
+
+
 let padArray = [pad1,pad2,pad3,pad4,pad5,pad6,pad7,pad8,pad9]
