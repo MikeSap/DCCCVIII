@@ -66,21 +66,10 @@ document.addEventListener("DOMContentLoaded", function(){
             beat = setInterval(function(){document.dispatchEvent(oneBeat)},30000/BPM)
         }
     })
-    //implement the switcher
     
     
-    //begin large comment
-
-    //everything within this comment block needs to be removed before the backend can be fully implemented.
-    //To implement it the backend must feed the frontend an array with each sound in it, those sounds must be turned into objects
-    //each with a name and sound.
-    //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
-    //I am working on fixing overlapping sound issues.
-    //giving the sounds names. Will be outmoded when the backend is done
-    //loading the sounds. This will be outmoded eventually.
 
 
-    //end large comment
     let playbtn = document.getElementById("play")
     let stopbtn = document.getElementById("stop")
     let play = false
@@ -109,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function(){
                         console.log(e)
                         e.target.innerText = sampleArray[currentSoundId].name
                         e.target.dataset.soundInfo = sampleArray[currentSoundId].src
-                        debugger
+                        
                         e.target.dataset.soundId = sampleArray[currentSoundId].id
                         let status = e.target.getAttribute("class").split(" ")
                         console.log(status)
