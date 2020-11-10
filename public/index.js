@@ -91,14 +91,14 @@ document.addEventListener("DOMContentLoaded", function(){
         contain = document.getElementById("sequencer-container")
         contain.innerHTML = ' '
         for (let y = 0; y < 8; y += 1){
-            let p = document.createElement("p")
+            let p = document.createElement("div")
             p.className = 'track'
-            p.innerText = `Sequence ${y+1}`
+            
             contain.append(p)
             p.dataset.trackId = y+1
             for (let x = 0; x < 16; x += 1){
-                let select = document.createElement("button")
-                select.setAttribute("class","sequence-input inert unclicked")
+                let select = document.createElement("div")
+                select.setAttribute("class","row sequence-input inert unclicked")
                 select.dataset.soundInfo = ' '
                 select.dataset.soundId = 0
                 select.dataset.position = x
@@ -112,13 +112,13 @@ document.addEventListener("DOMContentLoaded", function(){
                         e.target.dataset.soundId = sampleArray[currentSoundId].id
                         let status = e.target.getAttribute("class").split(" ")
                         console.log(status)
-                        e.target.setAttribute("class",`${status[0]} ${status[1]} clicked`)
+                        e.target.setAttribute("class",`row ${status[1]} ${status[2]} clicked`)
                     } else {
                         e.target.innerText = ' '
                         e.target.dataset.soundInfo = ' '
                         e.target.dataset.soundId = 0
                         let status = e.target.getAttribute("class").split(" ")
-                        e.target.setAttribute("class",`${status[0]} ${status[1]} unclicked`)
+                        e.target.setAttribute("class",`row ${status[1]} ${status[2]} unclicked`)
                     }
 
                 })
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function(){
         {
             let status = sounds[i].getAttribute("class").split(" ")
             console.log(status)
-            sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
+            sounds[i].setAttribute("class",`row ${status[1]} active ${status[3]}`)
             if (parseInt(sounds[i].dataset.position) === position){
                 pos = sounds[i].dataset.soundInfo
                 if (pos != " "){
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 let status = sounds[i].getAttribute("class").split(" ")
                 console.log(status)
-                sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
+                sounds[i].setAttribute("class",`row ${status[1]} inert ${status[3]}`)
             }
         }
         position += 1

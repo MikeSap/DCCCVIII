@@ -1,18 +1,20 @@
+  
 body{
-    font-family: "Arial";
+    font-family: "Arial Narrow";
+    width: auto;
 }
 
 .beat-pad-container{
   display: grid;
   grid-template-rows: repeat(3, 1fr) ;
   background-color: black;
-  padding: 20px;
-  width: 95%;
+  padding: 1%;
+  width: 100%;
   border-radius: 20px;
 }
 .instrument-container{
     display: grid;
-    grid-template-columns: 32% 15% 50%;
+    grid-template-columns: 35% 15% 50%;
     background-color: grey;
     padding: 0px;
     border-radius: 0px;
@@ -25,6 +27,7 @@ body{
 }
 .information-div {
     color: white;
+    padding: 30px;
     margin: 10px;
 
 }
@@ -39,24 +42,45 @@ body{
 .key-not-pressed{
     float: left;
     margin: 10px;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 5px;
     background: gray;
+}
+.key-not-pressed:hover{
+    background: darkgray;
 }
 
 .key-pressed{
     float: left;
     margin: 10px;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 5px;
     background: orange;
 }
-.sequence-input{
-    width: 60px;
-    height: 60px;
-    padding: 20px;
+button{
+    overflow: ellipsis;
+}
+.sequencer-container{
+    display: grid;
+    grid-template-rows: repeat(8, 65px);
+    width: 100%;
+
+
+}
+.sequence-input:hover{
+    opacity: 0.5;
+
+}
+
+.row.sequence-input{
+    overflow: hidden;
+    float: left;
+    width: 5%;
+    height: 85%;
+    background-color: white;
+    border-radius: 10px;
 }
 
 
@@ -78,8 +102,10 @@ body{
 }
 .sequence-input.active.clicked{
     background-color: orangered;
+    box-shadow: -3px -3px black;
 }
 
 .sequence-input.inert.clicked{
-    background-color: darkgray;
+    background-color: rgb(226, 180, 180);
+    box-shadow: -3px -3px black;
 }
