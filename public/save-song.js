@@ -30,7 +30,7 @@ function saveSong(e,tracks){
       fetch(`http://localhost:3000/songs`, reqObj)
           .then(resp => resp.json())
           .then(savedSong => {
-            debugger
+            console.log(savedSong)
           })
           
         e.target.reset()
