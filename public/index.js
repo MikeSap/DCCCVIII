@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function(){
     if (e.target.className == "key-not-pressed"){
         let button = e.target
         //debugger
-        playSound(sampleArray[parseInt(e.target.dataset.id)])
-        currentSoundId = parseInt(e.target.dataset.id)
+        playSound(sampleArray[parseInt(e.target.dataset.position)])
+        currentSoundId = parseInt(e.target.dataset.position)
         button.className = "key-pressed"
         setTimeout(function(){
             button.className = "key-not-pressed"}, 1000)
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (e.code.includes("Numpad")){
             let pad = document.querySelector(`#pad-${e.key}`)
 
-            playSound(sampleArray[parseInt(pad.dataset.id)])
+            playSound(sampleArray[parseInt(pad.dataset.position)])
             if (pad.className == "key-not-pressed"){
                     pad.className = "key-pressed"  
             }
