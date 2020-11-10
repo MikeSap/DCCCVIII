@@ -1,6 +1,6 @@
 .beat-pad-container{
   display: grid;
-  grid-template-rows: repeat(4, 1fr) ;
+  grid-template-rows: repeat(3, 1fr) ;
   background-color: black;
   padding: 20px;
   width: 375px;
@@ -14,9 +14,13 @@
 }
 .sequencer-div{
     width: 1000px;
+    margin: 25px;
+
 }
 .information-div {
     color: white;
+    margin: 10px;
+
 }
 
 
