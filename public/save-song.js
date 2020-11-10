@@ -14,5 +14,5 @@ songForm.addEventListener('submit', (e) => {
     seqInputs.forEach(input => {
         debugger 
     })
-        debugger
+        
 })
