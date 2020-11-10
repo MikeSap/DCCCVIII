@@ -18,6 +18,7 @@
     <script src='./index.js'defer></script>
     <script src='./save-song.js'defer></script>
     <script src='./load-song.js'defer></script>
+    <script src='./update-delete-song.js'defer></script>
     <title>DCCCVIII</title>
 </head>
 <body>
@@ -57,8 +58,13 @@
                 <input type="submit">
             </form>
             <br>
-            <select id="load-song"></select>
-
+            
+                <select id="load-song"></select>
+                <!-- <button id="load-song">Load Song</button> -->
+            <form class="crud-form">
+                <button id="update-song">Update Current Song</button>
+                <button id="delete-song">Delete Current Song</button>
+            </form>
         </div>
         <div class="sequencer-div">
             

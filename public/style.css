@@ -1,22 +1,26 @@
+body{
+    font-family: "Arial";
+}
+
 .beat-pad-container{
   display: grid;
   grid-template-rows: repeat(3, 1fr) ;
   background-color: black;
   padding: 20px;
-  width: 375px;
+  width: 95%;
   border-radius: 20px;
 }
 .instrument-container{
     display: grid;
-    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-columns: 32% 15% 50%;
     background-color: grey;
     padding: 0px;
-    border-radius: 20px;
+    border-radius: 0px;
 
 }
 .sequencer-div{
-    width: 1000px;
-    margin: 25px;
+    width: 100%;
+    margin: 0px;
 
 }
 .information-div {
@@ -24,7 +28,9 @@
     margin: 10px;
 
 }
-
+.track{
+    color:white;
+}
 
 .row {
     margin: 5.5px;
@@ -47,7 +53,11 @@
     border-radius: 5px;
     background: orange;
 }
-
+.sequence-input{
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+}
 
 
 .sequence-input.active{
@@ -65,4 +75,11 @@
 
 .hidden {
     display: none;
+}
+.sequence-input.active.clicked{
+    background-color: orangered;
+}
+
+.sequence-input.inert.clicked{
+    background-color: darkgray;
 }
