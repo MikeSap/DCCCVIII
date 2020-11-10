@@ -13,7 +13,7 @@ function updateSong(songSelect){
     let seqInputs = document.querySelectorAll('.sequence-input')
     let tracks= {}
     seqInputs.forEach(input => {
-        let soundId = input.selectedIndex
+        let soundId = input.dataset.soundId
         let trackId = input.parentNode.dataset.trackId
         tracks[trackId] ? tracks[trackId] = [...tracks[trackId], soundId]:
         tracks[trackId] = [ soundId ]

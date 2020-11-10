@@ -3,16 +3,15 @@ let songForm = document.querySelector('.song-form')
 songForm.addEventListener('submit', (e) => {
     e.preventDefault()
     let seqInputs = document.querySelectorAll('.sequence-input')
-    let tracks= {}
+    let tracks= {}    
     tracks["title"] = e.target.songName.value
     tracks["creator"] = e.target.producer.value
     seqInputs.forEach(input => {
-        let soundId = input.selectedIndex
+        let soundId = input.dataset.soundId
         let trackId = input.parentNode.dataset.trackId
         tracks[trackId] ? tracks[trackId] = [...tracks[trackId], soundId]:
         tracks[trackId] = [ soundId ]  
-    })
-    
+    })    
     saveSong(e,tracks)
 })
 
@@ -40,8 +39,6 @@ function saveSong(e,tracks){
             } else {console.log(savedSong)
               } 
           })
-          // .catch (error => window.alert(error)) 
-          
+          // .catch (error => window.alert(error))          
         e.target.reset()
-
 }

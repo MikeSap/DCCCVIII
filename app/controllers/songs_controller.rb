@@ -9,7 +9,8 @@ class SongsController < ApplicationController
          render json: song
      end
 
-     def create        
+     def create
+        byebug  
         song = Song.new(song_params)   
         return render json: {errors: song.errors.full_messages}, status: 500 unless song.save
 
