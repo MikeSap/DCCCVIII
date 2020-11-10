@@ -15,13 +15,8 @@ document.addEventListener("DOMContentLoaded", function(){
     if (e.target.className == "key-not-pressed"){
         let button = e.target
         //debugger
-<<<<<<< HEAD
         playSound(sampleArray[parseInt(e.target.dataset.id)])
         currentSoundId = parseInt(e.target.dataset.id)
-=======
-        playSound(sampleArray[parseInt(e.target.dataset.position)])
-        currentSoundId = parseInt(e.target.dataset.position)
->>>>>>> song-loader
         button.className = "key-pressed"
         setTimeout(function(){
             button.className = "key-not-pressed"}, 1000)
