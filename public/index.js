@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function(){
             let p = document.createElement("p")
             p.innertext = `Sequence ${y+1}`
             contain.append(p)
+            p.dataset.trackId = y+1
             for (let x = 0; x < 16; x += 1){
                 let select = document.createElement("select")
                 select.setAttribute("class","sequence-input unhighlighted")
