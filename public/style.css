@@ -14,9 +14,13 @@
 }
 .sequencer-div{
     width: 1000px;
+    margin: 25px;
+
 }
 .information-div {
     color: white;
+    margin: 10px;
+
 }
 
 

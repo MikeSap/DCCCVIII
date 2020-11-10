@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_162845) do
 
   create_table "tracks", force: :cascade do |t|
     t.bigint "song_id", null: false
+    t.integer "track_num"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["song_id"], name: "index_tracks_on_song_id"
