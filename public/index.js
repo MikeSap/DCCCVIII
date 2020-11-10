@@ -144,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 for (let i = 0; i < soundArray.length; i += 1){
                     let option = document.createElement("option")
                     option.innerText = soundArray[i].name
-                    option.value = 
                     select.append(option)
                 }
                 p.append(select)
