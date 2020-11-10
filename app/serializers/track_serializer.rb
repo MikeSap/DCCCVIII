@@ -1,5 +1,5 @@
 class TrackSerializer < ActiveModel::Serializer
-  attributes :id, :song
-  belongs_to :song
+  attributes :id
+
   has_many :track_sounds
 end
