@@ -8,4 +8,8 @@ class SongsController < ApplicationController
          song = Song.find(params[:id])
          render json: song
      end
+
+     def create
+        byebug
+     end
 end

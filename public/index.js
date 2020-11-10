@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function(){
     if (e.target.className == "key-not-pressed"){
         let button = e.target
         //debugger
-        playSound(sampleArray[parseInt(e.target.dataset.id)])
-        currentSoundId = parseInt(e.target.dataset.id)
+        playSound(sampleArray[parseInt(e.target.dataset.position)])
+        currentSoundId = parseInt(e.target.dataset.position)
         button.className = "key-pressed"
         setTimeout(function(){
             button.className = "key-not-pressed"}, 1000)
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (e.code.includes("Numpad")){
             let pad = document.querySelector(`#pad-${e.key}`)
 
-            playSound(sampleArray[parseInt(pad.dataset.id)])
+            playSound(sampleArray[parseInt(pad.dataset.position)])
             if (pad.className == "key-not-pressed"){
                     pad.className = "key-pressed"  
             }
@@ -69,15 +69,6 @@ document.addEventListener("DOMContentLoaded", function(){
     //those sounds should be shoveled into the soundArray array and their samples into sampleArray.
     //I am working on fixing overlapping sound issues.
     //giving the sounds names. Will be outmoded when the backend is done
-    sound1 = document.getElementById("sound-1")
-    sound2 = document.getElementById("sound-2")
-    sound3 = document.getElementById("sound-3")
-    sound4 = document.getElementById("sound-4")
-    sound5 = document.getElementById("sound-5")
-    sound6 = document.getElementById("sound-6")
-    sound7 = document.getElementById("sound-7")
-    sound8 = document.getElementById("sound-8")
-    sound9 = document.getElementById("sound-9")
     //loading the sounds. This will be outmoded eventually. 
     let kick = {
         name: "kick",
@@ -140,11 +131,10 @@ document.addEventListener("DOMContentLoaded", function(){
                 let select = document.createElement("select")
                 select.setAttribute("class","sequence-input unhighlighted")
                 
-                select.dataset.id = x
+                select.dataset.position = x
                 for (let i = 0; i < soundArray.length; i += 1){
                     let option = document.createElement("option")
                     option.innerText = soundArray[i].name
-                    option.value = 
                     select.append(option)
                 }
                 p.append(select)
@@ -176,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function(){
         for (let i = 0; i < sounds.length; i += 1)
         {
             sounds[i].setAttribute('class','sequence-input active')
-            if (parseInt(sounds[i].dataset.id) === position){
+            if (parseInt(sounds[i].dataset.position) === position){
                 pos = sounds[i].options["selectedIndex"]
                 if (pos != 0){
                     playSound(sampleArray[pos])
