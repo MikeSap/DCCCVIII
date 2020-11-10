@@ -1,3 +1,7 @@
+body{
+    font-family: "Arial";
+}
+
 .beat-pad-container{
   display: grid;
   grid-template-rows: repeat(3, 1fr) ;
@@ -24,7 +28,9 @@
     margin: 10px;
 
 }
-
+.track{
+    color:white;
+}
 
 .row {
     margin: 5.5px;
@@ -47,10 +53,22 @@
     border-radius: 5px;
     background: orange;
 }
-
+.sequence-input{
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+}
 
 
 .sequence-input.active{
     color: blue;
     background-color: orange;
+}
+
+.sequence-input.active.clicked{
+    background-color: orangered;
+}
+
+.sequence-input.inert.clicked{
+    background-color: darkgray;
 }
