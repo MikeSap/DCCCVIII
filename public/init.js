@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", main())
 
 function main(){
-    fetchSounds(1)
+    fetchSounds(2)
 }
 
 function fetchSounds(bankId){
