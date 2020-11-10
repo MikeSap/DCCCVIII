@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", main())
 function main(){
     fetchSounds(1)
     fetchBanks()
+    fetchSongs()
 }
 
 function fetchSounds(bankId){
@@ -38,3 +39,21 @@ function bankSelector(banks){
     })
 }
 
+function fetchSongs(){
+    fetch('http://localhost:3000/songs')
+    .then(resp => resp.json())
+    .then(songSelector)
+}
+
+function songSelector(songs){
+    const select = document.getElementById('load-song')
+    songs.forEach(song => {
+        const option = document.createElement('option')
+        option.innerText = song.title
+        option.dataset.id = song.id
+        select.append(option)
+    })
+    select.addEventListener('change', e => {
+        loadSong(e.target.options[e.target.selectedIndex].dataset.id)
+    })
+}

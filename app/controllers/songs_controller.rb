@@ -12,7 +12,7 @@ class SongsController < ApplicationController
      def create        
         song = Song.new(song_params)        
         return render json: song unless song.save
-        
+
         tracks = {}
         tracks["1"] = params["1"]
         tracks["2"] = params["2"]
