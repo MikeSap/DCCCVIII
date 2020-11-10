@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if (e.target.className == "key-not-pressed"){
         let button = e.target
         //debugger
-        playSound(sampleArray[parseInt(e.target.dataset.id)])
+        playSound(sampleArray[parseInt(e.target.dataset.position)])
         currentSoundId = parseInt(e.target.dataset.position)
         button.className = "key-pressed"
         setTimeout(function(){
@@ -125,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function(){
         contain = document.getElementById("sequencer-container")
         for (let y = 0; y < 8; y += 1){
             let p = document.createElement("p")
+            p.className = 'track'
             p.innertext = `Sequence ${y+1}`
             contain.append(p)
             p.dataset.trackId = y+1
