@@ -10,8 +10,8 @@ class SongsController < ApplicationController
      end
 
      def create        
-        song = Song.new(song_params)        
-        return render json: song unless song.save
+        song = Song.new(song_params)   
+        return render json: {errors: song.errors.full_messages}, status: 500 unless song.save
 
         tracks = {}
         tracks["1"] = params["1"]

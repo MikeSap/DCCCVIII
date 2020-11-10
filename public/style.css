@@ -54,3 +54,15 @@
     color: blue;
     background-color: orange;
 }
+
+
+.errors {
+    background: #c51244 !important;
+    padding: 5px;
+    position: relative; 
+    display: inline-block !important;
+  }
+
+.hidden {
+    display: none;
+}

@@ -30,8 +30,17 @@ function saveSong(e,tracks){
       fetch(`http://localhost:3000/songs`, reqObj)
           .then(resp => resp.json())
           .then(savedSong => {
-            console.log(savedSong)
+            if (savedSong["errors"]){
+            errorNode.setAttribute('class', 'errors')
+            savedSong["errors"].forEach(error => errorNode.innerHTML += `<p>${error}</p>`)           
+            setTimeout(() => {
+              errorNode.innerText = ""
+              errorNode.setAttribute('class', 'hidden')
+            }, 3500)
+            } else {console.log(savedSong)
+              } 
           })
+          // .catch (error => window.alert(error)) 
           
         e.target.reset()
 
