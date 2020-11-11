@@ -1,4 +1,3 @@
-
 let BPM = 120
 let currentSoundId = 1
 let position = 0
@@ -56,7 +55,6 @@ document.onkeyup = (e) => {
 }
 
 bpmInput.addEventListener("input", function(e){
-    console.log(e.target.value)
     BPM = e.target.value
     if (play === true){
         clearInterval(beat)
@@ -70,6 +68,7 @@ let play = false
 let oneBeat = new CustomEvent('oneBeat')
 
 function setUpSequencer(){
+    play = false
     contain = document.getElementById("sequencer-container")
     contain.innerHTML = ' '
     for (let y = 0; y < 8; y += 1){
@@ -88,13 +87,11 @@ function setUpSequencer(){
 
                 if (e.target.dataset.soundInfo != sampleArray[currentSoundId].src)
                 {
-                    console.log(e)
                     e.target.innerText = sampleArray[currentSoundId].name
                     e.target.dataset.soundInfo = sampleArray[currentSoundId].src
                     
                     e.target.dataset.soundId = sampleArray[currentSoundId].id
                     let status = e.target.getAttribute("class").split(" ")
-                    console.log(status)
                     e.target.setAttribute("class",`${status[0]} ${status[1]} clicked`)
                 } else {
                     e.target.innerText = ' '
@@ -114,7 +111,6 @@ playbtn.addEventListener("click",function(){
     if (play === false)
     {
         play = true
-        console.log("working")
         beat = setInterval(function(){document.dispatchEvent(oneBeat)},30000/BPM)
     }
 })
@@ -124,17 +120,15 @@ stopbtn.addEventListener("click",function(){
     {
         play = false
         position = 0
-        console.log("Stopped")
         clearInterval(beat)
     }
 })
 
 document.addEventListener("oneBeat", function(){
-    let sounds = document.getElementsByClassName("sequence-input")
+    let sounds = document.getElementsByClassName("clicked")
     for (let i = 0; i < sounds.length; i += 1)
     {
         let status = sounds[i].getAttribute("class").split(" ")
-        console.log(status)
         sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
         if (parseInt(sounds[i].dataset.position) === position){
             pos = sounds[i].dataset.soundInfo
@@ -142,16 +136,25 @@ document.addEventListener("oneBeat", function(){
                 let node = document.createElement('audio') 
                 node.setAttribute(`src`,`${pos}`)
                 node.setAttribute('preload','auto')
-                playSound(node)
-                console.log(node)
+                node.play()
             }
         } else {
 
             let status = sounds[i].getAttribute("class").split(" ")
-            console.log(status)
             sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
         }
     }
+    // sounds = document.getElementsByClassName("unclicked")
+    // for (let i = 0; i < sounds.length; i += 1)
+    // {
+    //     let status = sounds[i].getAttribute("class").split(" ")
+    //     sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
+    //     if (parseInt(sounds[i].dataset.position) === position){
+    //     } else {
+    //         let status = sounds[i].getAttribute("class").split(" ")
+    //         sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
+    //     }
+    // }
     position += 1
     if (position === 16)
     {

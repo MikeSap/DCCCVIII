@@ -1,5 +1,5 @@
 function loadSong(id){
-    clearSong()
+    //clearSong()
     setUpSequencer()
     fetch(`/songs/${id}`)
     .then(resp => resp.json())
