@@ -6,7 +6,7 @@ function loadSong(id){
     .then(json => {
         bpm.value = `${json.bpm}`
         json.tracks.forEach((track, index) => {
-        fetch(`http://localhost:3000/tracks/${track.id}`)
+        fetch(`/tracks/${track.id}`)
         .then(resp => resp.json())
         .then(track => loadTrack(track, index))
     })})
