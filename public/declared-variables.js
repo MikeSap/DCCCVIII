@@ -21,6 +21,7 @@ const pad9 = document.getElementById('pad-9')
 const errorNode = document.getElementById('error-node')
 const crudForm = document.querySelector('.crud-form')
 const songSelect = document.getElementById('load-song')
+const bpm = document.querySelector('#BPM-input')
 
 
 

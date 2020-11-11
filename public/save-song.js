@@ -6,6 +6,7 @@ songForm.addEventListener('submit', (e) => {
     let tracks= {}    
     tracks["title"] = e.target.songName.value
     tracks["creator"] = e.target.producer.value
+    tracks["bpm"] = parseInt(bpm.value)
     seqInputs.forEach(input => {
         let soundId = input.dataset.soundId
         let trackId = input.parentNode.dataset.trackId
@@ -36,7 +37,8 @@ function saveSong(e,tracks){
               errorNode.innerText = ""
               errorNode.setAttribute('class', 'hidden')
             }, 3500)
-            } else {console.log(savedSong)
+            } else {
+              songSelect.innerHTML += `<option data-id=${savedSong.id}>${savedSong.title}</options>`
               } 
           })
           // .catch (error => window.alert(error))          

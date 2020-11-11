@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_162845) do
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.string "creator"
+    t.integer "bpm"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

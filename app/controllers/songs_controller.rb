@@ -9,7 +9,7 @@ class SongsController < ApplicationController
          render json: song
      end
 
-     def create
+     def create        
         song = Song.new(song_params)   
         return render json: {errors: song.errors.full_messages}, status: 500 unless song.save
 
@@ -40,7 +40,7 @@ class SongsController < ApplicationController
      private
 
      def song_params
-        params.permit("title","creator")
+        params.permit("title","creator","bpm")
     end
 
     def split_params(params)
