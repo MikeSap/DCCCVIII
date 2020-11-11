@@ -28,7 +28,7 @@ function updateSong(songSelect){
         body: JSON.stringify(tracks)
       }
 
-      fetch(`http://localhost:3000/songs/${songSelect.options[songSelect.selectedIndex].dataset.id}`, reqObj)
+      fetch(`/songs/${songSelect.options[songSelect.selectedIndex].dataset.id}`, reqObj)
           .then(resp => resp.json())
           .then(updatedSong => { 
               console.log(updatedSong)

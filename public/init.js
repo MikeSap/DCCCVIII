@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", main())
     }
 
     function fetchSounds(bankId){
-        fetch(`http://localhost:3000/banks/${bankId}`)
+        fetch(`/banks/${bankId}`)
         .then(resp => resp.json())
         .then(initializeBank)
     }
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", main())
     }
 
     function  fetchBanks(){
-        fetch('http://localhost:3000/banks')
+        fetch('/banks')
         .then(resp => resp.json())
         .then(bankSelector)
     }
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", main())
     }
 
     function fetchSongs(){
-        fetch('http://localhost:3000/songs')
+        fetch('/songs')
         .then(resp => resp.json())
         .then(songSelector)
     }

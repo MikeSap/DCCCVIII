@@ -1,7 +1,7 @@
 function loadSong(id){
     clearSong()
     setUpSequencer()
-    fetch(`http://localhost:3000/songs/${id}`)
+    fetch(`/songs/${id}`)
     .then(resp => resp.json())
     .then(json => {
         bpm.value = `${json.bpm}`
