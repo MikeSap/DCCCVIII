@@ -21,7 +21,7 @@ function loadTrack(track, index){
         position.dataset.soundId = ts.sound.sound_id
         position.dataset.soundInfo = ts.sound.sound_location
         position.innerText = ts.sound.sound_name
-        position.setAttribute("class", `row sequence-input inert clicked`)
+        position.setAttribute("class", `sequence-input inert clicked`)
         
     })
 }

@@ -68,7 +68,6 @@ let play = false
 let oneBeat = new CustomEvent('oneBeat')
 
 function setUpSequencer(){
-    play = false
     contain = document.getElementById("sequencer-container")
     contain.innerHTML = ' '
     for (let y = 0; y < 8; y += 1){
@@ -79,7 +78,7 @@ function setUpSequencer(){
         p.dataset.trackId = y+1
         for (let x = 0; x < 16; x += 1){
             let select = document.createElement("div")
-            select.setAttribute("class","sequence-input inert unclicked")
+            select.setAttribute("class", "sequence-input inert unclicked")
             select.dataset.soundInfo = ' '
             select.dataset.soundId = 0
             select.dataset.position = x
@@ -130,13 +129,14 @@ document.addEventListener("oneBeat", function(){
     {
         let status = sounds[i].getAttribute("class").split(" ")
         sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
+        //debugger
         if (parseInt(sounds[i].dataset.position) === position){
             pos = sounds[i].dataset.soundInfo
             if (pos != " "){
                 let node = document.createElement('audio') 
                 node.setAttribute(`src`,`${pos}`)
                 node.setAttribute('preload','auto')
-                node.play()
+                playSound(node)
             }
         } else {
 
@@ -144,17 +144,17 @@ document.addEventListener("oneBeat", function(){
             sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
         }
     }
-    // sounds = document.getElementsByClassName("unclicked")
-    // for (let i = 0; i < sounds.length; i += 1)
-    // {
-    //     let status = sounds[i].getAttribute("class").split(" ")
-    //     sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
-    //     if (parseInt(sounds[i].dataset.position) === position){
-    //     } else {
-    //         let status = sounds[i].getAttribute("class").split(" ")
-    //         sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
-    //     }
-    // }
+    sounds = document.getElementsByClassName("unclicked")
+    for (let i = 0; i < sounds.length; i += 1)
+    {
+        let status = sounds[i].getAttribute("class").split(" ")
+        sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
+        if (parseInt(sounds[i].dataset.position) === position){
+        } else {
+            let status = sounds[i].getAttribute("class").split(" ")
+            sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
+        }
+    }
     position += 1
     if (position === 16)
     {
