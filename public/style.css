@@ -57,6 +57,8 @@ select{
 }
 
 .key-not-pressed{
+    box-sizing: border-box;
+    border: 10px solid red;
     float: left;
     margin: 1%;
     width: 30%;
@@ -69,12 +71,15 @@ select{
 }
 
 .key-pressed{
+    box-sizing: border-box;
+    border: 10px solid red;
     float: left;
     margin: 1%;
     width: 30%;
     height: 100%;
     border-radius: 1%;
-    background: orange;
+    background: rgb(246,245,239);
+    background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%);
 }
 button{
     overflow: ellipsis;
@@ -102,8 +107,9 @@ button{
 
 
 .sequence-input.active{
-    color: blue;
-    background-color: orange;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 206, 217);
+    
 }
 
 
@@ -118,11 +124,11 @@ button{
     display: none;
 }
 .sequence-input.active.clicked{
-    background-color: orangered;
+    background-color: rgb(248, 110, 110);
     box-shadow: -0.5% -0.5% black;
 }
 
 .sequence-input.inert.clicked{
-    background-color: rgb(226, 180, 180);
+    background-color: rgb(248, 143, 110);
     box-shadow: -0.5% -0.5% black;
 }
