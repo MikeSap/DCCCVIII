@@ -129,7 +129,6 @@ document.addEventListener("oneBeat", function(){
     {
         let status = sounds[i].getAttribute("class").split(" ")
         sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
-        //debugger
         if (parseInt(sounds[i].dataset.position) === position){
             pos = sounds[i].dataset.soundInfo
             if (pos != " "){
