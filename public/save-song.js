@@ -37,8 +37,12 @@ function saveSong(e,tracks){
               errorNode.innerText = ""
               errorNode.setAttribute('class', 'hidden')
             }, 3500)
-            } else {
-              songSelect.innerHTML += `<option data-id=${savedSong.id}>${savedSong.title}</options>`
+            } else {              
+              let newOp = document.createElement("OPTION")              
+              newOp.setAttribute('data-id', `${savedSong.id}`)
+              newOp.append(`${savedSong.title}`)              
+              songSelect.append(newOp)                      
+              songSelect.value = newOp.value
               } 
           })
           // .catch (error => window.alert(error))          
