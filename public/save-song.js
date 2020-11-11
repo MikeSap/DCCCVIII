@@ -26,7 +26,7 @@ function saveSong(e,tracks){
         body: JSON.stringify(tracks)
       }
 
-      fetch(`http://localhost:3000/songs`, reqObj)
+      fetch(`/songs`, reqObj)
           .then(resp => resp.json())
           .then(savedSong => {
             if (savedSong["errors"]){
