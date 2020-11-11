@@ -1,28 +1,41 @@
   
-body{
+.main-div {
     font-family: "Arial Narrow";
-    width: 720px;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+    /* overflow: auto; */
+    max-width: 100%;
+    max-height: 50%;
+    height: calc(100vh - 16px);
 }
 
 .beat-pad-container{
   display: grid;
-  grid-template-rows: repeat(3, 1fr) ;
+  grid-template-rows: repeat(3, 2fr) 5%;
   background-color: black;
   padding: 1%;
-  width: 720px;
+  resize: none;
   border-radius: 20px;
 }
 .instrument-container{
     display: grid;
-    grid-template-columns: 35% 15% 50%;
+    resize: none;
+    grid-template-columns: 30% 15% 50%;
     background-color: grey;
-    padding: 0px;
-    border-radius: 0px;
+    width: 1920px;
+    height: 540px;
+    min-width: 1280px;
+    max-width: 1920px;
+    padding-bottom: 38px;
+    border-radius: 20px;
+    position: relative;
 
 }
 .sequencer-div{
+    resize: none;
     width: 100%;
-    margin: 0px;
+    margin: 5%;
 
 }
 .information-div {
@@ -34,6 +47,10 @@ body{
 .track{
     color:white;
 }
+select{
+    margin: 5px;
+}
+
 
 .row {
     margin: 5.5px;
@@ -41,9 +58,9 @@ body{
 
 .key-not-pressed{
     float: left;
-    margin: 10px;
-    width: 150px;
-    height: 150px;
+    margin: 1%;
+    width: 30%;
+    height: 100%;
     border-radius: 5px;
     background: gray;
 }
@@ -53,10 +70,10 @@ body{
 
 .key-pressed{
     float: left;
-    margin: 10px;
-    width: 150px;
-    height: 150px;
-    border-radius: 5px;
+    margin: 1%;
+    width: 30%;
+    height: 100%;
+    border-radius: 1%;
     background: orange;
 }
 button{
@@ -64,7 +81,7 @@ button{
 }
 .sequencer-container{
     display: grid;
-    grid-template-rows: repeat(8, 65px);
+    margin: 0px;
     width: 100%;
 
 
@@ -73,14 +90,14 @@ button{
     opacity: 0.5;
 
 }
-
-.row.sequence-input{
+.sequence-input{
     overflow: hidden;
     float: left;
-    width: 5%;
-    height: 85%;
+    width: 50px;
+    height: 50px;
     background-color: white;
     border-radius: 10px;
+    margin: 5px;
 }
 
 
@@ -102,10 +119,10 @@ button{
 }
 .sequence-input.active.clicked{
     background-color: orangered;
-    box-shadow: -3px -3px black;
+    box-shadow: -0.5% -0.5% black;
 }
 
 .sequence-input.inert.clicked{
     background-color: rgb(226, 180, 180);
-    box-shadow: -3px -3px black;
+    box-shadow: -0.5% -0.5% black;
 }

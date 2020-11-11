@@ -22,54 +22,56 @@
     <title>DCCCVIII</title>
 </head>
 <body>
-    <div class="instrument-container">
-        <div class="beat-pad-container">
-            <div class="row" data-row="1">
-                <div data-position="7" id="pad-7" class="key-not-pressed"></div>
-                <div data-position="8" id="pad-8"class="key-not-pressed"></div>
-                <div data-position="9" id="pad-9" class="key-not-pressed"></div>
-            </div>        
-            <div class="row" data-row="2">
-                <div data-position="4" id="pad-4" class="key-not-pressed"></div>
-                <div data-position="5" id="pad-5"class="key-not-pressed"></div>
-                <div data-position="6" id="pad-6" class="key-not-pressed"></div>
-            </div>       
-            <div class="row" data-row="3">
-                <div data-position="1" id="pad-1" class="key-not-pressed"></div>
-                <div data-position="2" id="pad-2"class="key-not-pressed"></div>
-                <div data-position="3" id="pad-3"class="key-not-pressed"></div>
+    <div class="main-div">
+        <div class="instrument-container">
+            <div class="beat-pad-container">
+                <div class="row" data-row="1">
+                    <div data-position="7" id="pad-7" class="key-not-pressed"></div>
+                    <div data-position="8" id="pad-8"class="key-not-pressed"></div>
+                    <div data-position="9" id="pad-9" class="key-not-pressed"></div>
+                </div>        
+                <div class="row" data-row="2">
+                    <div data-position="4" id="pad-4" class="key-not-pressed"></div>
+                    <div data-position="5" id="pad-5"class="key-not-pressed"></div>
+                    <div data-position="6" id="pad-6" class="key-not-pressed"></div>
+                </div>       
+                <div class="row" data-row="3">
+                    <div data-position="1" id="pad-1" class="key-not-pressed"></div>
+                    <div data-position="2" id="pad-2"class="key-not-pressed"></div>
+                    <div data-position="3" id="pad-3"class="key-not-pressed"></div>
+                </div>
+                <select id='bank-select'></select>
             </div>
-            <select id='bank-select'></select>
-        </div>
-        <div class="information-div">
-            <h1>DCCCVIII</h1>
-            <div id="error-node" class="hidden"></div>
-            <p>BPM: <input type="number" value="120" id="BPM-input"></p>
-            <button id="play">Play</button>
-            <button id="stop">Stop</button>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <form class="song-form">
-                <input type="text" id="producer" name="producer" placeholder="Creator">
-                <input type="text" id="song-name" name="songName"placeholder="Title">
-                <input type="submit">
-            </form>
-            <br>
-            
-                <select id="load-song"></select>
-                <!-- <button id="load-song">Load Song</button> -->
-            <form class="crud-form">
-                <button id="update-song">Update Current Song</button>
-                <button id="delete-song">Delete Current Song</button>
-            </form>
-        </div>
-        <div class="sequencer-div">
-            
-            
-            <div id="sequencer-container" class="sequencer-container">
+            <div class="information-div">
+                <h1>DCCCVIII</h1>
+                <div id="error-node" class="hidden"></div>
+                <p>BPM: <input type="number" value="120" id="BPM-input"></p>
+                <button id="play">Play</button>
+                <button id="stop">Stop</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <form class="song-form">
+                    <input type="text" id="producer" name="producer" placeholder="Creator">
+                    <input type="text" id="song-name" name="songName"placeholder="Title">
+                    <input type="submit">
+                </form>
+                <br>
+                
+                    <select id="load-song"></select>
+                    <!-- <button id="load-song">Load Song</button> -->
+                <form class="crud-form">
+                    <button id="update-song">Update Current Song</button>
+                    <button id="delete-song">Delete Current Song</button>
+                </form>
+            </div>
+            <div class="sequencer-div">
+                
+                
+                <div id="sequencer-container" class="sequencer-container">
+            </div>
         </div>
     </div>
 
