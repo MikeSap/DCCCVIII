@@ -17,7 +17,7 @@ class SongsController < ApplicationController
         
         tracks.each do |track, sounds|
             track = Track.create(song:song, track_num: track.to_i)
-            sounds.each_with_index do |sound, i|                
+            sounds.each_with_index do |sound, i|             
                 TrackSound.create(track: track, sound_id: sound, position: i)
             end
         end        
@@ -27,14 +27,24 @@ class SongsController < ApplicationController
 
      def update
         tracks = split_params(params)
+        
 
         tracks.each do |track, sounds|
-            track = Track.where(song_id: params[:id], track_num: track.to_i)
+            track = Track.find_by(song_id: params[:id], track_num: track.to_i)            
             sounds.each_with_index do |sound, i|                
-                TrackSound.update(track: track, sound_id: sound, position: i)
+                if sound == "0"
+                    TrackSound.find_by(track: track, position: i) ? TrackSound.find_by(track: track, position: i).delete : nil
+                else                    
+                   ts = TrackSound.find_or_create_by(track: track, position: i)
+                   ts.update(sound_id: sound)          
+                end                                               
             end
-        end        
-        render json: song
+        end
+     end
+
+     def destroy
+        byebug
+        Song.find(params["id"]).delete
      end
 
      private

@@ -36,6 +36,11 @@ function updateSong(songSelect){
 }
 
 
-function deleteSong(songSelect){
-
+function deleteSong(songSelect){    
+    fetch(`http://localhost:3000/songs/${songSelect.options[songSelect.selectedIndex].dataset.id}`, {method: 'DELETE'})
+    .then(resp => resp.json())
+    .then(deletedSong => {                
+        songSelect.options[songSelect.selectedIndex].remove()
+        songSelect.selectedIndex = 0
+    })
 }
