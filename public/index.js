@@ -121,12 +121,8 @@ document.addEventListener("oneBeat", function(){
                 let node = document.createElement('audio') 
                 node.setAttribute(`src`,`${pos}`)
                 node.setAttribute('preload','auto')
-<<<<<<< HEAD
-                node.play()
-=======
                 node.setAttribute('data-id', `${sounds[i].dataset.soundId}`)
-                playSound(node)
->>>>>>> a5af29fa414a2946945526c8d61d871cc43f6c94
+                node.play()
             }
         } else {
 

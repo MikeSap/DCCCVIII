@@ -1,4 +1,19 @@
-  
+input{
+    width: 95%;
+}
+#play{
+    width: 45%;
+}
+#stop{
+    width: 45%;
+    
+}
+select{
+    width: 95%;
+}
+h1{
+    margin: 0px;
+}
 .main-div {
     font-family: "Arial Narrow";
     padding: 10px;
@@ -11,12 +26,13 @@
 }
 
 .beat-pad-container{
-  display: grid;
-  grid-template-rows: repeat(3, 2fr) 5%;
-  background-color: black;
-  padding: 1%;
-  resize: none;
-  border-radius: 20px;
+    
+    display: grid;
+    grid-template-rows: repeat(3, 2fr) 3vh;
+    background-color: black;
+    padding: 1%;
+    resize: none;
+    border-radius: 20px;
 }
 .instrument-container{
     display: grid;
@@ -24,11 +40,12 @@
     grid-template-columns: 30% 70%;
     background-color: grey;
     width: 98vw;
-    height: 60vh;
+    height: calc(98vw * 0.39);
+    min-width: 979px;
     padding-bottom: 0px;
     border-radius: 20px;
     position: relative;
-    box-shadow: 20px 20px black;
+    box-shadow: 1vw 2vh black;
 
 
 }
@@ -39,11 +56,17 @@
 
 }
 .information-div {
+    justify-content: center;
+    width: 95vw;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: grey;
     display: grid;
-    grid-template-columns: repeat(4,20%);
+    grid-template-columns: repeat(4,25%);
     color: white;
     padding: 30px;
     margin: 10px;
+    box-shadow: 1vw 2vh black;
 
 }
 .track{
@@ -59,12 +82,14 @@ select{
 }
 
 .key-not-pressed{
+    flex-wrap: nowrap;
+    overflow: hidden;
     box-sizing: border-box;
     border: 10px solid red;
     float: left;
     margin: 1%;
-    width: 30%;
-    height: 100%;
+    width: 31%;
+    height: calc(30vw * 0.35);
     border-radius: 5px;
     background: gray;
 }
@@ -73,12 +98,14 @@ select{
 }
 
 .key-pressed{
+    flex-wrap: nowrap;
+    overflow: hidden;
     box-sizing: border-box;
     border: 10px solid red;
     float: left;
     margin: 1%;
-    width: 30%;
-    height: 100%;
+    width: 31%;
+    height: calc(30vw * 0.35);
     border-radius: 1%;
     background: rgb(246,245,239);
     background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%);
@@ -100,11 +127,11 @@ button{
 .sequence-input{
     overflow: hidden;
     float: left;
-    width: 3.8vw;
-    height: 6.5vh;
+    width: 5.5%;
+    height: calc(70vw * .06);
     background-color: white;
     border-radius: 10px;
-    margin: .3vh;
+    margin: calc(4vw * .06);
 }
 
 
