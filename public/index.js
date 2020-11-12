@@ -13,8 +13,8 @@ function playSound(node){
         setTimeout(function(){
             pad.classList.remove('key-pressed')
             pad.classList.add("key-not-pressed")}, 150)
-        }
     }
+}
 beatPad.addEventListener('mousedown', (e) => {
 
 if (padArray.includes(e.target)){
@@ -87,9 +87,29 @@ function setUpSequencer(){
                 }
 
             })
-            p.append(select)
+            p.append(select)       
         }
+        addVolumeSliders(p)
     }
+}
+
+function addVolumeSliders(track){
+    // let tracks = document.getElementsByClassName('track')
+
+    let sliderContainer = document.createElement('div')
+    sliderContainer.setAttribute('class', 'volume-slider-container')
+    
+    let slider = document.createElement('input')
+    slider.setAttribute('type', 'range')
+    slider.setAttribute('min', '0')
+    slider.setAttribute('max', '100')
+    slider.setAttribute('value', '100')
+    slider.setAttribute('class', 'slider')
+    
+    sliderContainer.append(slider)
+
+    slider.setAttribute('data-track-id', `${track.dataset.trackID}`)
+    track.append(slider)    
 }
 
 playbtn.addEventListener("click",function(){
