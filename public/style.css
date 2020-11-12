@@ -152,7 +152,7 @@ button{
     overflow: hidden;
     float: left;
     width: 5.4%;
-    height: calc(70vw * .06);
+    height: calc(70vw * .055);
     background-color: white;
     border-radius: 10px;
     margin: calc(4vw * .06);
