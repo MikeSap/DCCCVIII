@@ -21,7 +21,7 @@
 .instrument-container{
     display: grid;
     resize: none;
-    grid-template-columns: 30% 15% 50%;
+    grid-template-columns: 30% 70%;
     background-color: grey;
     width: 1920px;
     height: 540px;
@@ -125,10 +125,10 @@ button{
 }
 .sequence-input.active.clicked{
     background-color: rgb(248, 110, 110);
-    box-shadow: -0.5% -0.5% black;
+    box-shadow: -2px -2px black;
 }
 
 .sequence-input.inert.clicked{
     background-color: rgb(248, 143, 110);
-    box-shadow: -0.5% -0.5% black;
+    box-shadow: -2px -2px black;
 }
