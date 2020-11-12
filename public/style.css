@@ -50,15 +50,20 @@ h1{
 
     /* width: 98vw; */
     /* height: calc(98vw * 0.39); */
-    min-width: 979px;
     padding-bottom: 0px;
     border-radius: 20px;
     position: relative;
     background-color: grey;
     box-shadow: 1vw 2vh black;
 }
+.forms-div{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+}
+
 
 .sequencer-div{
+    
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
     -webkit-user-select: none;
@@ -144,7 +149,7 @@ button{
 .sequence-input{
     overflow: hidden;
     float: left;
-    width: 5.5%;
+    width: 5.4%;
     height: calc(70vw * .06);
     background-color: white;
     border-radius: 10px;

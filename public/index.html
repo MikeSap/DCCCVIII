@@ -24,28 +24,6 @@
 <body>
     <div class="information-div container-fluid">
         <h1>DCCCVIII</h1>
-        <div>
-            <!-- <h1>DCCCVIII</h1> -->
-            <div id="error-node" class="hidden"></div>
-            <p>BPM: <input type="number" value="120" id="BPM-input">
-            <button id="play">Play</button>
-            <button id="stop">Stop</button>
-        </div>
-        <div>
-            <form class="song-form">
-                <input type="text" id="producer" name="producer" placeholder="Creator">
-                <input type="text" id="song-name" name="songName"placeholder="Title">
-                <input type="submit">
-            </form>
-        </div>
-        <div>
-            <select id="load-song"></select>
-                <!-- <button id="load-song">Load Song</button> -->
-            <form class="crud-form">
-                <button id="update-song">Update Current Song</button>
-                <button id="delete-song">Delete Current Song</button>
-            </form>
-        </div>
     </div>
     <div class="main-div container-fluid">
         <div class="instrument-container row">
@@ -69,6 +47,29 @@
             </div>
             
             <div class="sequencer-div col-12 col-lg-8">
+                <div class="forms-div">
+                    <div>
+                        <div id="error-node" class="hidden"></div>
+                        <p>BPM: <input type="number" value="120" id="BPM-input">
+                        <button id="play">Play</button>
+                        <button id="stop">Stop</button>
+                    </div>
+                    <div>
+                        <form class="song-form">
+                            <input type="text" id="producer" name="producer" placeholder="Creator">
+                            <input type="text" id="song-name" name="songName"placeholder="Title">
+                            <input type="submit">
+                        </form>
+                    </div>
+                    <div>
+                        <select id="load-song"></select>
+                            <!-- <button id="load-song">Load Song</button> -->
+                        <form class="crud-form">
+                            <button id="update-song">Update Current Song</button>
+                            <button id="delete-song">Delete Current Song</button>
+                        </form>
+                    </div>
+                </div>
                 
                 
                 <div id="sequencer-container" class="sequencer-container">
