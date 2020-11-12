@@ -39,6 +39,8 @@
 
 }
 .information-div {
+    display: grid;
+    grid-template-columns: repeat(3,20%);
     color: white;
     padding: 30px;
     margin: 10px;
