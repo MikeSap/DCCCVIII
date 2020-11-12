@@ -1,25 +1,28 @@
 input{
     width: 95%;
 }
+
 #play{
     width: 45%;
 }
+
 #stop{
     width: 45%;
-    
 }
+
 select{
     width: 95%;
 }
+
 h1{
     margin: 0px;
 }
+
 .main-div {
     font-family: "Arial Narrow";
     padding: 10px;
     box-sizing: border-box;
     resize: none;
-    /* overflow: auto; */
     max-width: 100%;
     max-height: 50%;
     height: calc(100vh - 16px);
@@ -34,30 +37,31 @@ h1{
     resize: none;
     border-radius: 20px;
 }
+
 .instrument-container{
-    display: grid;
-    resize: none;
+    /* display: grid;
+    resize: none; */
     grid-template-columns: 30% 70%;
-    background-color: grey;
-    width: 98vw;
-    height: calc(98vw * 0.39);
+
+    /* width: 98vw; */
+    /* height: calc(98vw * 0.39); */
     min-width: 979px;
     padding-bottom: 0px;
     border-radius: 20px;
     position: relative;
+    background-color: grey;
     box-shadow: 1vw 2vh black;
-
-
 }
+
 .sequencer-div{
     resize: none;
+    padding-bottom: 0px;
+    border-radius: 20px;
     width: 100%;
     margin: 1vh;
-
 }
+
 .information-div {
-    justify-content: center;
-    width: 95vw;
     justify-content: center;
     border-radius: 20px;
     background-color: grey;
@@ -67,15 +71,15 @@ h1{
     padding: 30px;
     margin: 10px;
     box-shadow: 1vw 2vh black;
-
 }
+
 .track{
     color:white;
 }
+
 select{
     margin: 5px;
 }
-
 
 .row {
     margin: 5.5px;
@@ -93,6 +97,7 @@ select{
     border-radius: 5px;
     background: gray;
 }
+
 .key-not-pressed:hover{
     background: darkgray;
 }
@@ -110,20 +115,22 @@ select{
     background: rgb(246,245,239);
     background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%);
 }
+
 button{
     overflow: ellipsis;
 }
+
 .sequencer-container{
     display: grid;
     margin: 0px;
     width: 100%;
-
-
 }
+
 .sequence-input:hover{
     opacity: 0.5;
 
 }
+
 .sequence-input{
     overflow: hidden;
     float: left;
@@ -134,24 +141,22 @@ button{
     margin: calc(4vw * .06);
 }
 
-
 .sequence-input.active{
     color: rgb(255, 255, 255);
     background-color: rgb(255, 206, 217);
-    
 }
-
 
 .errors {
     background: #c51244 !important;
     padding: 5px;
     position: relative; 
     display: inline-block !important;
-  }
+}
 
 .hidden {
     display: none;
 }
+
 .sequence-input.active.clicked{
     background-color: rgb(248, 110, 110);
     box-shadow: -2px -2px black;
