@@ -19,6 +19,7 @@ h1{
 }
 
 .main-div {
+
     font-family: "Arial Narrow";
     padding: 10px;
     box-sizing: border-box;
@@ -29,7 +30,11 @@ h1{
 }
 
 .beat-pad-container{
-    
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     display: grid;
     grid-template-rows: repeat(3, 2fr) 3vh;
     background-color: black;
@@ -53,6 +58,11 @@ h1{
 }
 
 .sequencer-div{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     resize: none;
     padding-bottom: 0px;
     border-radius: 20px;

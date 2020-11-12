@@ -4,9 +4,7 @@ let position = 0
 let bpmInput = document.getElementById("BPM-input")
 const beatPad = document.querySelector('.beat-pad-container')
 function playSound(node){
-    
     node.play()
-    console.log(node.currentTime)
     let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.id)        
      if (pad) {        
         pad.classList.remove('key-not-pressed')
@@ -115,6 +113,7 @@ stopbtn.addEventListener("click",function(){
 })
 
 document.addEventListener("oneBeat", function(){
+    let changePads = []
     let sounds = document.getElementsByClassName("clicked")
     for (let i = 0; i < sounds.length; i += 1)
     {
@@ -125,20 +124,31 @@ document.addEventListener("oneBeat", function(){
             {
                 sounds[i].childNodes[1].currentTime = 0;
                 sounds[i].childNodes[1].play()
+                changePads.push(sounds[i])
             }
         } else {
 
             let status = sounds[i].getAttribute("class").split(" ")
             sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
         }
+        
     }
+    changePads.forEach(function(node){
+        let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.soundId)        
+        if (pad) {        
+           pad.classList.remove('key-not-pressed')
+           pad.classList.add("key-pressed")
+           setTimeout(function(){
+               pad.classList.remove('key-pressed')
+               pad.classList.add("key-not-pressed")}, 150)
+           }
+    })
     sounds = document.getElementsByClassName("unclicked")
     for (let i = 0; i < sounds.length; i += 1)
     {
         let status = sounds[i].getAttribute("class").split(" ")
         sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
         if (parseInt(sounds[i].dataset.position) === position){
-            
         } else {
             let status = sounds[i].getAttribute("class").split(" ")
             sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
