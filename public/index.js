@@ -4,8 +4,9 @@ let position = 0
 let bpmInput = document.getElementById("BPM-input")
 const beatPad = document.querySelector('.beat-pad-container')
 function playSound(node){
-    let new_audio = node.cloneNode()
-    new_audio.play()
+    
+    node.play()
+    console.log(node.currentTime)
     let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.id)        
      if (pad) {        
         pad.classList.remove('key-not-pressed')
@@ -122,6 +123,7 @@ document.addEventListener("oneBeat", function(){
         if (parseInt(sounds[i].dataset.position) === position){
             if (sounds[i].childElementCount)
             {
+                sounds[i].childNodes[1].currentTime = 0;
                 sounds[i].childNodes[1].play()
             }
         } else {
@@ -136,6 +138,7 @@ document.addEventListener("oneBeat", function(){
         let status = sounds[i].getAttribute("class").split(" ")
         sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
         if (parseInt(sounds[i].dataset.position) === position){
+            
         } else {
             let status = sounds[i].getAttribute("class").split(" ")
             sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)
