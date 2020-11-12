@@ -6,16 +6,6 @@ const beatPad = document.querySelector('.beat-pad-container')
 function playSound(node){
     let new_audio = node.cloneNode()
     new_audio.play()
-<<<<<<< HEAD
-        // find and light up pad of sound being played
-    let pad = document.getElementsByClassName(`.${node.src.split("http://localhost:3000")[1]}`)[0]
-    if (pad) {
-    pad.classList.remove('key-not-pressed')
-    pad.classList.add("key-pressed")
-    setTimeout(function(){
-        pad.classList.remove('key-pressed')
-        pad.classList.add("key-not-pressed")}, 150)
-=======
     let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.id)        
      if (pad) {        
         pad.classList.remove('key-not-pressed')
@@ -24,7 +14,6 @@ function playSound(node){
             pad.classList.remove('key-pressed')
             pad.classList.add("key-not-pressed")}, 150)
         }
->>>>>>> a5af29fa414a2946945526c8d61d871cc43f6c94
     }
 beatPad.addEventListener('mousedown', (e) => {
 
