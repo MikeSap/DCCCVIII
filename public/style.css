@@ -1,32 +1,40 @@
 input{
     width: 95%;
 }
+
 #play{
     width: 45%;
 }
+
 #stop{
     width: 45%;
-    
 }
+
 select{
     width: 95%;
 }
+
 h1{
     margin: 0px;
 }
+
 .main-div {
+
     font-family: "Arial Narrow";
     padding: 10px;
     box-sizing: border-box;
     resize: none;
-    /* overflow: auto; */
     max-width: 100%;
     max-height: 50%;
     height: calc(100vh - 16px);
 }
 
 .beat-pad-container{
-    
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     display: grid;
     grid-template-rows: repeat(3, 2fr) 3vh;
     background-color: black;
@@ -36,32 +44,41 @@ h1{
     height: 85vh;
     
 }
+
 .instrument-container{
-    display: grid;
-    resize: none;
+    /* display: grid;
+    resize: none; */
     grid-template-columns: 30% 70%;
-    background-color: grey;
-    width: 98vw;
-    height: 85vh;
-    min-width: 979px;
+
+    /* width: 98vw; */
+    /* height: calc(98vw * 0.39); */
     padding-bottom: 0px;
     border-radius: 20px;
     position: relative;
+    background-color: grey;
     box-shadow: 1vw 2vh black;
-
-
 }
+.forms-div{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+}
+
+
 .sequencer-div{
+    
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     resize: none;
+    padding-bottom: 0px;
+    border-radius: 20px;
     width: 100%;
-    margin: 1vh; 
-    height: 55.5vw;
-
-
+    margin: 1vh;
 }
+
 .information-div {
-    justify-content: center;
-    width: 95vw;
     justify-content: center;
     border-radius: 20px;
     background-color: grey;
@@ -71,15 +88,15 @@ h1{
     padding: 30px;
     margin: 10px;
     box-shadow: 1vw 2vh black;
-
 }
+
 .track{
     color:white;
 }
+
 select{
     margin: 5px;
 }
-
 
 .row {
     margin: 5.5px;
@@ -89,6 +106,7 @@ select{
 }
 
 .key-not-pressed{
+    text-align: center;
     flex-wrap: nowrap;
     overflow: hidden;
     box-sizing: border-box;
@@ -100,11 +118,13 @@ select{
     border-radius: 5px;
     background: gray;
 }
+
 .key-not-pressed:hover{
     background: darkgray;
 }
 
 .key-pressed{
+    text-align: center;
     flex-wrap: nowrap;
     overflow: hidden;
     box-sizing: border-box;
@@ -118,56 +138,47 @@ select{
     background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%);
 }
 
-
-.slider {
-    width: 98%;
-    height: calc(10vw * .06);}
-}
-
 button{
     overflow: ellipsis;
 }
+
 .sequencer-container{
     display: grid;
     margin: 0px;
     width: 100%;
 }
+
 .sequence-input:hover{
     opacity: 0.5;
 
 }
+
 .sequence-input{
     overflow: hidden;
     float: left;
-    width: 5.5%;
-    height: calc(55.5vw * .06);
+    width: 5.4%;
+    height: calc(70vw * .055);
     background-color: white;
     border-radius: 10px;
     margin: calc(4vw * .06);
 }
 
-.slider {
-    width: 98%;
-    height: calc(10vw * .06);}
-}
-
-
 .sequence-input.active{
     color: rgb(255, 255, 255);
-    background-color: rgb(255, 206, 217);    
+    background-color: rgb(255, 206, 217);
 }
-
 
 .errors {
     background: #c51244 !important;
     padding: 5px;
     position: relative; 
     display: inline-block !important;
-  }
+}
 
 .hidden {
     display: none;
 }
+
 .sequence-input.active.clicked{
     background-color: rgb(248, 110, 110);
     box-shadow: -2px -2px black;
