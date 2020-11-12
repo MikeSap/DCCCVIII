@@ -9,6 +9,7 @@ function playSound(node){
         
     let pad
     pad = document.getElementsByClassName(`.${node.src.split("http://localhost:3000")[1]}`)[0]
+    debugger
     if (pad) {
     pad.classList.remove('key-not-pressed')
     pad.classList.add("key-pressed")

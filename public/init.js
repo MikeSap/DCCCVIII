@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", main())
             new_sound.name = sound.name
             new_sound.id = sound.id
             sampleArray[index + 1] = new_sound
+            let previousSound = padArray[index].classList[1]
+            padArray[index].classList.remove(previousSound)
             padArray[index].classList.add(`${sound.location}`)
             padArray[index].innerText = `${sound.name}`
         })
