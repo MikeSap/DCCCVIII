@@ -135,7 +135,7 @@ document.addEventListener("oneBeat", function(){
                 let node = document.createElement('audio') 
                 node.setAttribute(`src`,`${pos}`)
                 node.setAttribute('preload','auto')
-                playSound(node)
+                node.play()
             }
         } else {
 
