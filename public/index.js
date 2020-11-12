@@ -6,6 +6,7 @@ const beatPad = document.querySelector('.beat-pad-container')
 function playSound(node){
     let new_audio = node.cloneNode()
     new_audio.play()
+   
     let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.id)        
      if (pad) {        
         pad.classList.remove('key-not-pressed')
@@ -94,8 +95,6 @@ function setUpSequencer(){
 }
 
 function addVolumeSliders(track){
-    // let tracks = document.getElementsByClassName('track')
-
     let sliderContainer = document.createElement('div')
     sliderContainer.setAttribute('class', 'volume-slider-container')
     
@@ -107,9 +106,8 @@ function addVolumeSliders(track){
     slider.setAttribute('class', 'slider')
     
     sliderContainer.append(slider)
-
-    slider.setAttribute('data-track-id', `${track.dataset.trackID}`)
-    track.append(slider)    
+    slider.setAttribute('data-track-id', track.dataset.trackId)
+    track.append(slider)
 }
 
 playbtn.addEventListener("click",function(){
@@ -142,7 +140,7 @@ document.addEventListener("oneBeat", function(){
                 node.setAttribute(`src`,`${pos}`)
                 node.setAttribute('preload','auto')
                 node.setAttribute('data-id', `${sounds[i].dataset.soundId}`)
-                playSound(node)
+                node.play()
             }
         } else {
 
