@@ -23,24 +23,24 @@
     resize: none;
     grid-template-columns: 30% 70%;
     background-color: grey;
-    width: 1920px;
-    height: 540px;
-    min-width: 1280px;
-    max-width: 1920px;
-    padding-bottom: 38px;
+    width: 98vw;
+    height: 60vh;
+    padding-bottom: 0px;
     border-radius: 20px;
     position: relative;
+    box-shadow: 20px 20px black;
+
 
 }
 .sequencer-div{
     resize: none;
     width: 100%;
-    margin: 5%;
+    margin: 1vh;
 
 }
 .information-div {
     display: grid;
-    grid-template-columns: repeat(3,20%);
+    grid-template-columns: repeat(4,20%);
     color: white;
     padding: 30px;
     margin: 10px;
@@ -100,11 +100,11 @@ button{
 .sequence-input{
     overflow: hidden;
     float: left;
-    width: 50px;
-    height: 50px;
+    width: 3.8vw;
+    height: 6.5vh;
     background-color: white;
     border-radius: 10px;
-    margin: 5px;
+    margin: .3vh;
 }
 
 
