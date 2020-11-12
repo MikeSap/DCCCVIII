@@ -134,8 +134,7 @@ document.addEventListener("oneBeat", function(){
         
     }
     changePads.forEach(function(node){
-        let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.soundId)
-        console.log(pad)        
+        let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.soundId)        
         if (pad) {        
            pad.classList.remove('key-not-pressed')
            pad.classList.add("key-pressed")
