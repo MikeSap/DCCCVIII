@@ -1,5 +1,4 @@
 function loadSong(id){
-    //clearSong()
     setUpSequencer()
     fetch(`/songs/${id}`)
     .then(resp => resp.json())
@@ -25,12 +24,3 @@ function loadTrack(track, index){
         
     })
 }
-
-function clearSong(){
-    for(let i = 0; i < 8; i++){
-        const trackNodes = Array.from(document.querySelectorAll('.track')[i].children)
-        trackNodes.forEach(pos => pos.selectedIndex = 0)
-    }
-}
-
-
