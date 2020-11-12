@@ -54,7 +54,9 @@ h1{
 .sequencer-div{
     resize: none;
     width: 100%;
-    margin: 1vh;
+    margin: 1vh; 
+    height: 55.5vw;
+
 
 }
 .information-div {
@@ -83,6 +85,9 @@ select{
     margin: 5.5px;
 }
 
+.bank-select-dropdown {
+}
+
 .key-not-pressed{
     flex-wrap: nowrap;
     overflow: hidden;
@@ -91,7 +96,7 @@ select{
     float: left;
     margin: 1%;
     width: 31%;
-    height: calc(30vw * 0.35);
+    height: calc(25vw * 0.35);
     border-radius: 5px;
     background: gray;
 }
@@ -107,11 +112,18 @@ select{
     float: left;
     margin: 1%;
     width: 31%;
-    height: calc(30vw * 0.35);
+    height: calc(25vw * 0.35);
     border-radius: 1%;
     background: rgb(246,245,239);
     background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%);
 }
+
+
+.slider {
+    width: 98%;
+    height: calc(10vw * .06);}
+}
+
 button{
     overflow: ellipsis;
 }
@@ -128,17 +140,21 @@ button{
     overflow: hidden;
     float: left;
     width: 5.5%;
-    height: calc(60vw * .06);
+    height: calc(55.5vw * .06);
     background-color: white;
     border-radius: 10px;
     margin: calc(4vw * .06);
 }
 
+.slider {
+    width: 98%;
+    height: calc(10vw * .06);}
+}
+
 
 .sequence-input.active{
     color: rgb(255, 255, 255);
-    background-color: rgb(255, 206, 217);
-    
+    background-color: rgb(255, 206, 217);    
 }
 
 
@@ -163,6 +179,3 @@ button{
 }
 
 
-.slider {
-    width: 98%;
-    height: calc(10vw * .06);}

@@ -3,7 +3,7 @@ let currentSoundId = 1
 let position = 0
 let bpmInput = document.getElementById("BPM-input")
 const beatPad = document.querySelector('.beat-pad-container')
-function playSound(node){    
+function playSound(node){
     node.play()
     let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.id)        
      if (pad) {        
@@ -110,6 +110,14 @@ function addVolumeSliders(track){
     sliderContainer.append(slider)
     slider.setAttribute('data-track-id', track.dataset.trackId)
     track.append(slider)
+    slider.addEventListener('change', (e)=>{
+        for(const seq of e.target.parentElement.children){
+            if (seq.children.length > 0){
+                let volume = e.target.value/100
+                seq.firstElementChild.volume =  volume
+            } 
+        }
+    })
 }
 
 playbtn.addEventListener("click",function(){
