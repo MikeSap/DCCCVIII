@@ -19,7 +19,12 @@ function fetchSounds(bankId){
             new_sound.name = sound.name
             new_sound.id = sound.id
             sampleArray[index + 1] = new_sound
-            padArray[index].dataset.soundId =`${sound.id}`
+            let previousSound = padArray[index].classList[0]
+            if (previousSound){
+            padArray[index].classList.remove(previousSound)
+            }
+            padArray[index].classList.add(`${sound.location}`)
+            padArray[index].classList.add("key-not-pressed")
             padArray[index].innerText = `${sound.name}`
         })
     }
