@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", main())
             new_sound.name = sound.name
             new_sound.id = sound.id
             sampleArray[index + 1] = new_sound
+            padArray[index].classList.add(`${sound.location}`)
             padArray[index].innerText = `${sound.name}`
         })
     }
