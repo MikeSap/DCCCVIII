@@ -101,6 +101,7 @@ select{
 }
 
 .key-not-pressed{
+    text-align: center;
     flex-wrap: nowrap;
     overflow: hidden;
     box-sizing: border-box;
@@ -118,6 +119,7 @@ select{
 }
 
 .key-pressed{
+    text-align: center;
     flex-wrap: nowrap;
     overflow: hidden;
     box-sizing: border-box;
