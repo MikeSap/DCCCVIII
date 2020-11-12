@@ -1,5 +1,4 @@
 function loadSong(id){
-    //clearSong()
     setUpSequencer()
     fetch(`/songs/${id}`)
     .then(resp => resp.json())
@@ -14,9 +13,7 @@ function loadSong(id){
 
 function loadTrack(track, index){
     const trackNodes = Array.from(document.querySelectorAll('.track')[index].children)
-    //debugger
     track.track_sounds.forEach(ts => {
-        //debugger
         const position = trackNodes.find(pos => pos.dataset.position == ts.position)
         position.dataset.soundId = ts.sound.sound_id
         position.dataset.soundInfo = ts.sound.sound_location
@@ -25,12 +22,3 @@ function loadTrack(track, index){
         
     })
 }
-
-function clearSong(){
-    for(let i = 0; i < 8; i++){
-        const trackNodes = Array.from(document.querySelectorAll('.track')[i].children)
-        trackNodes.forEach(pos => pos.selectedIndex = 0)
-    }
-}
-
-
