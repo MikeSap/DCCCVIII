@@ -69,15 +69,19 @@ function setUpSequencer(){
             select.dataset.soundId = 0
             select.dataset.position = x
             select.addEventListener("click",function(e){
-
+                e.target.innerHTML = ""
                 if (e.target.dataset.soundInfo != sampleArray[currentSoundId].src)
                 {
+                    let audio = document.createElement('audio')
                     e.target.innerText = sampleArray[currentSoundId].name
                     e.target.dataset.soundInfo = sampleArray[currentSoundId].src
-                    
+                    audio.setAttribute('src',sampleArray[currentSoundId].src)
+                    audio.setAttribute('preload','auto')
                     e.target.dataset.soundId = sampleArray[currentSoundId].id
                     let status = e.target.getAttribute("class").split(" ")
+
                     e.target.setAttribute("class",`${status[0]} ${status[1]} clicked`)
+                    e.target.append(audio)
                 } else {
                     e.target.innerText = ' '
                     e.target.dataset.soundInfo = ' '
@@ -116,13 +120,9 @@ document.addEventListener("oneBeat", function(){
         let status = sounds[i].getAttribute("class").split(" ")
         sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
         if (parseInt(sounds[i].dataset.position) === position){
-            pos = sounds[i].dataset.soundInfo
-            if (pos != " "){
-                let node = document.createElement('audio') 
-                node.setAttribute(`src`,`${pos}`)
-                node.setAttribute('preload','auto')
-                node.setAttribute('data-id', `${sounds[i].dataset.soundId}`)
-                node.play()
+            if (sounds[i].childElementCount)
+            {
+                sounds[i].childNodes[1].play()
             }
         } else {
 
