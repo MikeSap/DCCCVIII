@@ -33,6 +33,8 @@ h1{
     padding: 1%;
     resize: none;
     border-radius: 20px;
+    height: 85vh;
+    
 }
 .instrument-container{
     display: grid;
@@ -40,7 +42,7 @@ h1{
     grid-template-columns: 30% 70%;
     background-color: grey;
     width: 98vw;
-    height: calc(98vw * 0.39);
+    height: 85vh;
     min-width: 979px;
     padding-bottom: 0px;
     border-radius: 20px;

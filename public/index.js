@@ -3,10 +3,8 @@ let currentSoundId = 1
 let position = 0
 let bpmInput = document.getElementById("BPM-input")
 const beatPad = document.querySelector('.beat-pad-container')
-function playSound(node){
-    let new_audio = node.cloneNode()
-    new_audio.play()
-   
+function playSound(node){    
+    node.play()
     let pad = padArray.find(pad => pad.dataset.soundId == node.dataset.id)        
      if (pad) {        
         pad.classList.remove('key-not-pressed')
@@ -70,15 +68,19 @@ function setUpSequencer(){
             select.dataset.soundId = 0
             select.dataset.position = x
             select.addEventListener("click",function(e){
-
+                e.target.innerHTML = ""
                 if (e.target.dataset.soundInfo != sampleArray[currentSoundId].src)
                 {
+                    let audio = document.createElement('audio')
                     e.target.innerText = sampleArray[currentSoundId].name
                     e.target.dataset.soundInfo = sampleArray[currentSoundId].src
-                    
+                    audio.setAttribute('src',sampleArray[currentSoundId].src)
+                    audio.setAttribute('preload','auto')
                     e.target.dataset.soundId = sampleArray[currentSoundId].id
                     let status = e.target.getAttribute("class").split(" ")
+
                     e.target.setAttribute("class",`${status[0]} ${status[1]} clicked`)
+                    e.target.append(audio)
                 } else {
                     e.target.innerText = ' '
                     e.target.dataset.soundInfo = ' '
@@ -134,13 +136,10 @@ document.addEventListener("oneBeat", function(){
         let status = sounds[i].getAttribute("class").split(" ")
         sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
         if (parseInt(sounds[i].dataset.position) === position){
-            pos = sounds[i].dataset.soundInfo
-            if (pos != " "){
-                let node = document.createElement('audio') 
-                node.setAttribute(`src`,`${pos}`)
-                node.setAttribute('preload','auto')
-                node.setAttribute('data-id', `${sounds[i].dataset.soundId}`)
-                node.play()
+            if (sounds[i].childElementCount)
+            {
+                sounds[i].childNodes[1].currentTime = 0;
+                sounds[i].childNodes[1].play()
             }
         } else {
 
@@ -154,6 +153,7 @@ document.addEventListener("oneBeat", function(){
         let status = sounds[i].getAttribute("class").split(" ")
         sounds[i].setAttribute("class",`${status[0]} active ${status[2]}`)
         if (parseInt(sounds[i].dataset.position) === position){
+            
         } else {
             let status = sounds[i].getAttribute("class").split(" ")
             sounds[i].setAttribute("class",`${status[0]} inert ${status[2]}`)

@@ -13,14 +13,16 @@ function loadSong(id){
 
 function loadTrack(track, index){
     const trackNodes = Array.from(document.querySelectorAll('.track')[index].children)
-    //debugger
     track.track_sounds.forEach(ts => {
-        //debugger
         const position = trackNodes.find(pos => pos.dataset.position == ts.position)
+        let audio = document.createElement('audio')
         position.dataset.soundId = ts.sound.sound_id
         position.dataset.soundInfo = ts.sound.sound_location
         position.innerText = ts.sound.sound_name
+        audio.setAttribute('src',position.dataset.soundInfo)
+        audio.setAttribute('preload','auto')
         position.setAttribute("class", `sequence-input inert clicked`)
+        position.append(audio)
         
     })
 }
