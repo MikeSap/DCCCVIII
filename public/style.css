@@ -117,8 +117,6 @@ button{
     display: grid;
     margin: 0px;
     width: 100%;
-
-
 }
 .sequence-input:hover{
     opacity: 0.5;
@@ -128,7 +126,7 @@ button{
     overflow: hidden;
     float: left;
     width: 5.5%;
-    height: calc(70vw * .06);
+    height: calc(60vw * .06);
     background-color: white;
     border-radius: 10px;
     margin: calc(4vw * .06);
@@ -161,3 +159,8 @@ button{
     background-color: rgb(248, 143, 110);
     box-shadow: -2px -2px black;
 }
+
+
+.slider {
+    width: 98%;
+    height: calc(10vw * .06);}
