@@ -31,7 +31,7 @@ function saveSong(e,tracks){
           .then(savedSong => {
             if (savedSong["errors"]){
             errorNode.setAttribute('class', 'errors')
-            savedSong["errors"].forEach(error => errorNode.innerHTML += `<p>${error}</p>`)           
+            savedSong["errors"].forEach(error => errorNode.innerHTML += `<li>${error}</li>`)           
             setTimeout(() => {
               errorNode.innerText = ""
               errorNode.setAttribute('class', 'hidden')

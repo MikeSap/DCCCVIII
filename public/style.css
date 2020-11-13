@@ -190,9 +190,9 @@ button{
 
 .errors {
     background: #c51244 !important;
+    border-radius: 5px;
+    text-align: center;
     padding: 5px;
-    position: relative; 
-    display: inline-block !important;
 }
 
 .hidden {
