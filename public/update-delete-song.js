@@ -13,6 +13,7 @@ function updateSong(songSelect){
     let seqInputs = document.querySelectorAll('.sequence-input')
     let tracks= {}
     tracks["bpm"] = parseInt(bpm.value)
+    // let volume = seqInputs[0].parentElement.childNodes[16].value
     seqInputs.forEach(input => {
         let soundId = input.dataset.soundId
         let trackId = input.parentNode.dataset.trackId

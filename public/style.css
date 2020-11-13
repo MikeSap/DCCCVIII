@@ -91,6 +91,10 @@ h1{
     color: white;
     padding: 30px;
     margin: 10px;
+    background-image: url(/assets/images/rome.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
     /* box-shadow: 1vw 2vh black; */
 }
 
