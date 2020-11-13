@@ -22,6 +22,7 @@ const errorNode = document.getElementById('error-node')
 const crudForm = document.querySelector('.crud-form')
 const songSelect = document.getElementById('load-song')
 const bpm = document.querySelector('#BPM-input')
+const volumeSliders = document.getElementsByClassName('slider')
 
 
 

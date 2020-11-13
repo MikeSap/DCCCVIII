@@ -19,6 +19,7 @@ h1{
 }
 
 .main-div {
+
     font-family: "Arial Narrow";
     padding: 10px;
     box-sizing: border-box;
@@ -29,6 +30,10 @@ h1{
 }
 
 .beat-pad-container{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
     user-select: none;
     display: grid;
     grid-template-rows: repeat(3, 2fr) 3vh;
@@ -36,6 +41,8 @@ h1{
     padding: 1%;
     resize: none;
     border-radius: 20px;
+    /* height: 85vh; */
+    
 }
 
 .instrument-container{
@@ -45,15 +52,25 @@ h1{
 
     /* width: 98vw; */
     /* height: calc(98vw * 0.39); */
-    min-width: 979px;
     padding-bottom: 0px;
     border-radius: 20px;
     position: relative;
     background-color: grey;
     box-shadow: 1vw 2vh black;
 }
+.forms-div{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+}
+
 
 .sequencer-div{
+    
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     resize: none;
     padding-bottom: 0px;
     border-radius: 20px;
@@ -83,6 +100,9 @@ select{
 
 .row {
     margin: 5.5px;
+}
+
+.bank-select-dropdown {
 }
 
 .key-not-pressed{
@@ -150,8 +170,8 @@ button{
 .sequence-input{
     overflow: hidden;
     float: left;
-    width: 5.5%;
-    height: calc(70vw * .06);
+    width: 5.4%;
+    height: calc(60vw * .055);
     background-color: white;
     border-radius: 10px;
     margin: calc(4vw * .06);
@@ -182,3 +202,5 @@ button{
     background-color: rgb(248, 143, 110);
     box-shadow: -2px -2px black;
 }
+
+
