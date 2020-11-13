@@ -48,6 +48,7 @@ h1{
     border-color: grey;
     border-width: 1vw;
     background-size: contain;
+    justify-content: center;
     /* display: grid;
     resize: none; */
     grid-template-columns: 30% 70%;
