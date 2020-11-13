@@ -4,6 +4,10 @@ function loadSong(id){
     .then(resp => resp.json())
     .then(json => {
         bpm.value = `${json.bpm}`
+        let bpmNode = document.getElementById("BPM-input")
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent("input", false, true);
+        bpmNode.dispatchEvent(evt);
         json.tracks.forEach((track, index) => {
         fetch(`/tracks/${track.id}`)
         .then(resp => resp.json())
