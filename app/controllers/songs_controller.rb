@@ -65,8 +65,6 @@ class SongsController < ApplicationController
         tracks["4"] = params["4"]
         tracks["5"] = params["5"]
         tracks["6"] = params["6"]
-        tracks["7"] = params["7"]
-        tracks["8"] = params["8"]
         tracks
     end
 

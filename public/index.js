@@ -55,7 +55,7 @@ let oneBeat = new CustomEvent('oneBeat')
 function setUpSequencer(){
     contain = document.getElementById("sequencer-container")
     contain.innerHTML = ' '
-    for (let y = 0; y < 8; y += 1){
+    for (let y = 0; y < 6; y += 1){
         let p = document.createElement("div")
         p.className = 'track'
         

@@ -138,7 +138,7 @@ Sound.create(bank: bank, name: 'Xylophone D', location: './assets/sounds/Xylopho
 Sound.create(bank: bank, name: 'Xylophone E2', location: './assets/sounds/Xylophone/08.E2.OGG')
 Sound.create(bank: bank, name: 'Xylophone Fs2', location: './assets/sounds/Xylophone/09.Fs2.OGG')
 
-song = Song.create(title: 'Flatiron Blues', creator: 'Tom', bpm: 120)
+song = Song.create(title: "4'33", creator: 'John Cage', bpm: 120)
 track = Track.create(song: song)
 
 # TrackSound.create(track: track, sound: kick, position: 1)
