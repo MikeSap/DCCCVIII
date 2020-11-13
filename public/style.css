@@ -24,8 +24,7 @@ h1{
     padding: 10px;
     box-sizing: border-box;
     resize: none;
-    max-width: 100%;
-    max-height: 50%;
+    /* max-height: 50%; */
     height: calc(100vh - 16px);
 }
 
@@ -46,6 +45,9 @@ h1{
 }
 
 .instrument-container{
+    border-color: grey;
+    border-width: 1vw;
+    background-size: contain;
     /* display: grid;
     resize: none; */
     grid-template-columns: 30% 70%;
@@ -54,9 +56,9 @@ h1{
     /* height: calc(98vw * 0.39); */
     padding-bottom: 0px;
     border-radius: 20px;
-    position: relative;
-    background-color: grey;
-    box-shadow: 1vw 2vh black;
+    /* position: relative; */
+    /* background-color: grey; */
+    /* box-shadow: 1vw 2vh black; */
 }
 .forms-div{
     display: grid;
@@ -87,7 +89,7 @@ h1{
     color: white;
     padding: 30px;
     margin: 10px;
-    box-shadow: 1vw 2vh black;
+    /* box-shadow: 1vw 2vh black; */
 }
 
 .track{
@@ -108,6 +110,7 @@ select{
 .key-not-pressed{
     height: 120px;
     line-height: 120px;
+    vertical-align: text-bottom;
     text-align: center;
     flex-wrap: nowrap;
     overflow: hidden;
@@ -121,7 +124,7 @@ select{
     float: left;
     margin: 1%;
     width: 31%;
-    /* height: calc(30vw * 0.35); */
+    height: calc(30vw * 0.35);
     /* border-radius: 5px; */
 
 }
@@ -131,6 +134,7 @@ select{
 }
 
 .key-pressed{
+    vertical-align: text-bottom;
     height: 120px;
     line-height: 120px;
     text-align: center;
@@ -146,7 +150,7 @@ select{
     float: left;
     margin: 1%;
     width: 31%;
-    /* height: calc(30vw * 0.35); */
+    height: calc(30vw * 0.35);
     border-radius: 1%;
     /* background: rgb(246,245,239);
     background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%); */
@@ -168,16 +172,19 @@ button{
 }
 
 .sequence-input{
+    
+    background-size: cover;
     overflow: hidden;
     float: left;
     width: 5.4%;
     height: calc(60vw * .055);
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: calc(4vw * .06);
 }
 
 .sequence-input.active{
+    
     color: rgb(255, 255, 255);
     background-color: rgb(255, 206, 217);
 }
@@ -194,6 +201,7 @@ button{
 }
 
 .sequence-input.active.clicked{
+    
     background-color: rgb(248, 110, 110);
     box-shadow: -2px -2px black;
 }
