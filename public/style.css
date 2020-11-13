@@ -188,5 +188,8 @@ button{
     background-color: rgb(248, 143, 110);
     box-shadow: -2px -2px black;
 }
+.slider{
+    color: red;
+}
 
 
