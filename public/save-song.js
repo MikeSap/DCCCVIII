@@ -39,7 +39,7 @@ function saveSong(e,tracks){
             } else {        
               let newOp = document.createElement("OPTION")              
               newOp.setAttribute('data-id', `${savedSong.id}`)
-              newOp.append(`${savedSong.title}`)              
+              newOp.append(`${savedSong.title} - ${savedSong.creator}`)              
               songSelect.append(newOp)                      
               songSelect.value = newOp.value
               } 
