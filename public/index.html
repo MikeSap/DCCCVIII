@@ -24,6 +24,7 @@
 <body>
     <div class="information-div container-fluid bg-dark">
         <h1>DCCCVIII</h1>
+        <div id="error-node" class="hidden"></div>
     </div>
     <div class="main-div container-fluid">
         <div class="instrument-container row">
@@ -48,25 +49,24 @@
             
             <div class="sequencer-div col-12 col-lg-8 bg-secondary" >
                 <div class="forms-div">
-                    <div>
-                        <div id="error-node" class="hidden"></div>
-                        <p>BPM: <input type="number" value="120" id="BPM-input">
+                    <div style="display: inline-flex;">
+                        <span>BPM:</span> <input type="number" value="120" id="BPM-input">
                         <button id="play">Play</button>
                         <button id="stop">Stop</button>
                     </div>
-                    <div>
-                        <form class="song-form">
+                    <div style="display: inline-flex;">
+                        <form class="song-form" style="display: inline-flex;">
                             <input type="text" id="producer" name="producer" placeholder="Creator">
                             <input type="text" id="song-name" name="songName"placeholder="Title">
                             <input type="submit">
                         </form>
                     </div>
-                    <div>
+                    <div style="display: inline-flex;">
                         <select id="load-song"></select>
                             <!-- <button id="load-song">Load Song</button> -->
-                        <form class="crud-form">
-                            <button id="update-song">Update Current Song</button>
-                            <button id="delete-song">Delete Current Song</button>
+                        <form class="crud-form"  style="display: inline-flex;">
+                            <button id="update-song">Update</button>
+                            <button id="delete-song">Delete</button>
                         </form>
                     </div>
                 </div>
