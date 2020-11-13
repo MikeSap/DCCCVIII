@@ -105,9 +105,6 @@ select{
     margin: 5.5px;
 }
 
-.bank-select-dropdown {
-}
-
 .key-not-pressed{
     height: 120px;
     line-height: 120px;
@@ -130,9 +127,6 @@ select{
 
 }
 
-.key-not-pressed:hover{
-    /* background: darkgray; */
-}
 
 .key-pressed{
     vertical-align: text-bottom;
