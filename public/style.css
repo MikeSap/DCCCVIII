@@ -106,36 +106,50 @@ select{
 }
 
 .key-not-pressed{
+    height: 120px;
+    line-height: 120px;
     text-align: center;
     flex-wrap: nowrap;
     overflow: hidden;
     box-sizing: border-box;
-    border: 10px solid red;
+    /* border: 10px solid red; */
+    background: url(pad-not-pressed.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
     float: left;
     margin: 1%;
     width: 31%;
-    height: calc(25vw * 0.35);
-    border-radius: 5px;
-    background: gray;
+    /* height: calc(30vw * 0.35); */
+    /* border-radius: 5px; */
+
 }
 
 .key-not-pressed:hover{
-    background: darkgray;
+    /* background: darkgray; */
 }
 
 .key-pressed{
+    height: 120px;
+    line-height: 120px;
     text-align: center;
     flex-wrap: nowrap;
     overflow: hidden;
+    background: url(pad-pressed.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     box-sizing: border-box;
-    border: 10px solid red;
+    color: white;
+    /* border: 10px solid red; */
     float: left;
     margin: 1%;
     width: 31%;
-    height: calc(25vw * 0.35);
+    /* height: calc(30vw * 0.35); */
     border-radius: 1%;
-    background: rgb(246,245,239);
-    background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%);
+    /* background: rgb(246,245,239);
+    background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%); */
 }
 
 button{
