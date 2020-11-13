@@ -61,6 +61,7 @@ h1{
     /* box-shadow: 1vw 2vh black; */
 }
 .forms-div{
+    padding: 2vh;
     display: grid;
     grid-template-columns: 32% 32% 32%;
 }
@@ -159,7 +160,6 @@ select{
 button{
     overflow: ellipsis;
 }
-
 .sequencer-container{
     display: grid;
     margin: 0px;

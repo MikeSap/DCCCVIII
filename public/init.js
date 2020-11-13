@@ -53,7 +53,7 @@ function songSelector(songs){
     const select = document.getElementById('load-song')
     songs.forEach(song => {
         const option = document.createElement('option')
-        option.innerText = song.title
+        option.innerText = `${song.title} - ${song.creator}`
         option.dataset.id = song.id
         select.append(option)
     })
