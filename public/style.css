@@ -1,0 +1,217 @@
+input{
+    width: 95%;
+}
+
+#play{
+    width: 45%;
+}
+
+#stop{
+    width: 45%;
+}
+
+select{
+    width: 95%;
+}
+
+h1{
+    margin: 0px;
+}
+
+.main-div {
+
+    font-family: "Arial Narrow";
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+    /* max-height: 50%; */
+    height: calc(100vh - 16px);
+}
+
+.beat-pad-container{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: grid;
+    grid-template-rows: repeat(3, 2fr) 3vh;
+    background-color: black;
+    padding: 1%;
+    resize: none;
+    border-radius: 20px;
+    /* height: 85vh; */
+    
+}
+
+.instrument-container{
+    border-color: grey;
+    border-width: 1vw;
+    background-size: contain;
+    justify-content: center;
+    /* display: grid;
+    resize: none; */
+    grid-template-columns: 30% 70%;
+
+    /* width: 98vw; */
+    /* height: calc(98vw * 0.39); */
+    padding-bottom: 0px;
+    border-radius: 20px;
+    /* position: relative; */
+    /* background-color: grey; */
+    /* box-shadow: 1vw 2vh black; */
+}
+.forms-div{
+    padding: 2vh;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+}
+
+
+.sequencer-div{
+    
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    resize: none;
+    padding-bottom: 0px;
+    border-radius: 20px;
+    width: 100%;
+    margin: 1vh;
+}
+
+.information-div {
+    justify-content: center;
+    border-radius: 20px;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    color: white;
+    padding: 30px;
+    margin: 10px;
+    text-shadow: 2px 2px black;
+    background-image: url(/assets/images/rome.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* box-shadow: 1vw 2vh black; */
+}
+
+.track{
+    color:white;
+}
+
+select{
+    margin: 5px;
+}
+
+.row {
+    margin: 5.5px;
+}
+
+.key-not-pressed{
+    height: 160px;
+    line-height: 160px;
+    vertical-align: text-bottom;
+    text-align: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* border: 10px solid red; */
+    background: url(pad-not-pressed.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    float: left;
+    margin: 1%;
+    width: 31%;
+    /* height: calc(30vw * 0.35); */
+    /* border-radius: 5px; */
+
+}
+
+
+.key-pressed{
+    vertical-align: text-bottom;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    background: url(pad-pressed.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: white;
+    /* border: 10px solid red; */
+    float: left;
+    margin: 1%;
+    width: 31%;
+    /* height: calc(30vw * 0.35); */
+    border-radius: 1%;
+    /* background: rgb(246,245,239);
+    background: radial-gradient(circle, rgba(246,245,239,1) 21%, rgba(210,199,114,1) 82%, rgba(255,209,0,1) 100%); */
+}
+
+button{
+    overflow: ellipsis;
+}
+.sequencer-container{
+    display: grid;
+    margin: 0px;
+    width: 100%;
+}
+
+.sequence-input:hover{
+    opacity: 0.5;
+
+}
+
+.sequence-input{
+    
+    background-size: cover;
+    overflow: hidden;
+    float: left;
+    width: 5.4%;
+    height: calc(60vw * .055);
+    background-color: white;
+    border-radius: 5px;
+    margin: calc(4vw * .06);
+}
+
+.sequence-input.active{
+    
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 206, 217);
+}
+
+.errors {
+    background: #c51244 !important;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.sequence-input.active.clicked{
+    
+    background-color: rgb(248, 110, 110);
+    box-shadow: -2px -2px black;
+}
+
+.sequence-input.inert.clicked{
+    background-color: rgb(248, 143, 110);
+    box-shadow: -2px -2px black;
+}
+.slider{
+    color: red;
+}
+
+
